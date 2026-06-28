@@ -1,0 +1,10 @@
+[
+  { "name": "M1A1 Abrams", "nation": "US", "factory": "Tank", "commandPoints": 215 },
+  { "name": "M2A2 Bradley", "nation": "US", "category": "Infantry", "cost": 60 },
+  { "name": "AH-64 Apache", "nation": "US", "factory": "Helo", "commandPoint": 210 },
+  { "name": "T-80U", "nation": "SOV", "factory": "Char", "commandPoints": 230 },
+  { "name": "Leopard 2A4", "nation": "RFA", "factory": "Tank", "commandPoints": 205 },
+  { "name": "Mirage 2000", "nation": "FR", "factory": "Air", "commandPoints": 130 },
+  { "name": "T-72M1 (PL)", "nation": "POL", "factory": "Tank", "commandPoints": 125 },
+  { "name": "Leopard C1", "nation": "CAN", "factory": "Tank", "commandPoints": 110 }
+]

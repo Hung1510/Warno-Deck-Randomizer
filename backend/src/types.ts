@@ -1,0 +1,68 @@
+export type CategoryCode = 'LOG' | 'REC' | 'INF' | 'ART' | 'TNK' | 'AA' | 'HEL' | 'AIR';
+export type Coalition = 'NATO' | 'PACT';
+export type DivisionType =
+  | 'Armored' | 'Cavalry' | 'Mechanized' | 'Motorized'
+  | 'Airborne' | 'Airmobile' | 'Naval' | 'Territorial';
+export type Mode = 'fun' | 'meta';
+
+export type CategoryLimits = Record<CategoryCode, number>;
+
+export interface Unit {
+  id: string;
+  name: string;
+  nation: string;
+  cat: CategoryCode;
+  cost: number;
+  meta: number;
+  fun: number;
+  tags: string[];
+}
+
+export interface DeckUnit extends Unit {
+  apCost: number;
+}
+
+export interface Division {
+  id: string;
+  name: string;
+  nation: string;
+  coalition: Coalition;
+  type: DivisionType;
+  dlc: string;
+  power: number;
+  blurb: string;
+  activationPoints: number;
+  categoryLimits: CategoryLimits;
+}
+
+// Division as returned in a deck payload (same shape, kept explicit for the API).
+export type PublicDivision = Division;
+
+export type Deck = Record<CategoryCode, DeckUnit[]>;
+
+export interface DeckSummary {
+  cards: number;
+  apSpent: number;
+  apTotal: number;
+  totalPoints: number;
+  categories: Record<CategoryCode, number>;
+}
+
+export interface DeckResponse {
+  seed: string | null;
+  mode: Mode;
+  theme: string;
+  code?: string;
+  division: PublicDivision;
+  deck: Deck;
+  summary: DeckSummary;
+}
+
+export interface RandomizeParams {
+  divisionId?: string;
+  mode?: Mode | string;
+  coalition?: Coalition | string;
+  nation?: string;
+  dlc?: string;
+  seed?: string;
+}

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace the domain below with your real deployment URL.
+Sitemap: https://warno-deck-randomizer.vercel.app/sitemap.xml
