@@ -1,7 +1,5 @@
 import type { DeckResponse, Division, MetaResponse, RandomizePayload } from './types';
 
-// API base. Empty string => relative URLs (uses Vite dev proxy). Set
-// VITE_API_BASE at build time to point at a deployed backend.
 const BASE: string = import.meta.env.VITE_API_BASE || '';
 
 async function json<T>(res: Response): Promise<T> {

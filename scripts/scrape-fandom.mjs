@@ -1,25 +1,4 @@
 #!/usr/bin/env node
-// ---------------------------------------------------------------------------
-// scrape-fandom.mjs — pull WARNO unit data from the Fandom wiki's MediaWiki API
-// and write the app's custom-units.json (auto-loaded by backend/src/data/units.ts).
-//
-// WHY THE FANDOM WIKI
-//   warno.fandom.com is server-rendered MediaWiki with a public API, and its
-//   content is licensed CC-BY-SA — so it can be reused *with attribution*. (The
-//   waryes.com table is a client-side app and its data belongs to Eugen Systems,
-//   so it isn't scraped here.) Underlying game values still originate from Eugen
-//   Systems; keep the attribution below intact if you publish the result.
-//
-// USAGE  (run on your own machine — needs internet access)
-//   node scripts/scrape-fandom.mjs                 # scrape all units -> custom-units.json
-//   node scripts/scrape-fandom.mjs --limit 25      # quick test: first 25 units
-//   node scripts/scrape-fandom.mjs --selftest      # parse a bundled sample, no network
-//   node scripts/scrape-fandom.mjs --out path.json # custom output path
-//
-// Politeness: one request at a time with a small delay and a descriptive
-// User-Agent, as MediaWiki/Fandom etiquette expects. ~700 unit pages ≈ a couple
-// of minutes. Re-run any time the wiki updates.
-// ---------------------------------------------------------------------------
 
 import fs from 'node:fs';
 import path from 'node:path';

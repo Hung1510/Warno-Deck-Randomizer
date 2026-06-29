@@ -215,9 +215,6 @@ const RAW: Record<string, RawRow[]> = {
 
 export const UNITS: Unit[] = Object.entries(RAW).flatMap(([nation, rows]) => build(nation, rows));
 
-// ---- Optional: drop in a real exported WARNO unit table ----------------------
-// If backend/src/data/custom-units.json exists, its entries are merged in
-// (matching ids override the curated samples, new ids are added). See README.
 type CustomUnit = Partial<Unit> & { name: string; nation: string; cat: CategoryCode };
 try {
   const here = path.dirname(fileURLToPath(import.meta.url));

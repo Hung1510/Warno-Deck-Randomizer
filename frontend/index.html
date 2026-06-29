@@ -4,13 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ============================================================= -->
-    <!-- SEO: replace https://warno-deck-randomizer.vercel.app with     -->
-    <!-- your real deployment URL here AND in public/sitemap.xml and    -->
-    <!-- public/robots.txt. (4 spots in this file: canonical, og:url,   -->
-    <!-- og:image, twitter:image, and the JSON-LD url.)                 -->
-    <!-- ============================================================= -->
-
     <title>WARNO Deck Builder &amp; Battlegroup Randomizer — Fun or Meta Decks</title>
     <meta
       name="description"
@@ -62,6 +55,48 @@
         "isAccessibleForFree": true,
         "keywords": "WARNO deck builder, deck randomizer, battlegroup, ORBAT generator, NATO, Warsaw Pact",
         "about": { "@type": "VideoGame", "name": "WARNO", "publisher": "Eugen Systems" }
+      }
+    </script>
+
+    <!-- FAQ structured data — extra search visibility -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the WARNO Deck Builder & Randomizer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A free web app that rolls a random WARNO battlegroup and builds a full deck for it. Pick a fun chaos mix or a competitive meta mix across 56 battlegroups and 14 NATO and Warsaw Pact nations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between the Fun mix and the Meta mix?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Meta mix favors strong, efficient units and rolls stronger divisions more often. The Fun mix spreads picks for chaotic, themed decks instead of optimizing for win rate."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I share a deck I rolled?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Every deck has a copyable deck code and a shareable link with the seed, so the exact same deck can be reproduced by anyone who opens it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this an official Eugen Systems tool?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. It is a fan-made, unofficial project. WARNO and its unit and division data belong to Eugen Systems."
+            }
+          }
+        ]
       }
     </script>
   </head>

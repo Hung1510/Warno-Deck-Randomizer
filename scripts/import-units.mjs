@@ -1,25 +1,4 @@
 #!/usr/bin/env node
-// ---------------------------------------------------------------------------
-// import-units.mjs — convert a real WARNO / WaRYes unit export into the app's
-// custom-units.json, which the backend auto-loads (see backend/src/data/units.ts).
-//
-// WHY THIS EXISTS
-//   The live waryes.com unit table is rendered client-side and the data belongs
-//   to Eugen Systems, so it can't (and shouldn't) be screen-scraped wholesale.
-//   Instead, supply a JSON export you have access to and run this converter.
-//
-// USAGE
-//   1. Put a unit export at  scripts/waryes-units.json  (or pass a path).
-//      It must be an array of unit objects (or { units: [...] } / { data: [...] }).
-//   2. From the project root:
-//        node scripts/import-units.mjs [inputFile] [outputFile]
-//      Defaults: in = scripts/waryes-units.json
-//                out = backend/src/data/custom-units.json
-//   3. Restart the backend. It logs "Loaded N custom units from custom-units.json".
-//
-// The field-name guesses below are deliberately broad. If your export uses
-// different keys, tweak FIELDS / NATION_MAP / CATEGORY_MAP near the top.
-// ---------------------------------------------------------------------------
 
 import fs from 'node:fs';
 import path from 'node:path';

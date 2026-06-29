@@ -1,5 +1,10 @@
 # WARNO ORBAT Randomizer
 
+[![CI](https://github.com/Hung1510/Warno-Deck-Randomizer/actions/workflows/ci.yml/badge.svg)](https://github.com/Hung1510/Warno-Deck-Randomizer/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-e0b04a.svg)](LICENSE)
+![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6.svg)
+![Made with React](https://img.shields.io/badge/React-18-4f86c6.svg)
+
 A full-stack web app for **WARNO** that rolls a random **battlegroup (division)** and
 fills it with a randomized deck. Pick the vibe:
 
@@ -77,7 +82,11 @@ warno-deck-randomizer/
 ├── scripts/
 │   ├── import-units.mjs          # convert a WaRYes/WARNO JSON export -> custom-units.json
 │   └── scrape-fandom.mjs         # scrape the CC-BY-SA Fandom wiki -> custom-units.json
-├── vercel.json
+├── .github/workflows/ci.yml      # CI: typecheck + build on push/PR
+├── .gitattributes                # normalize line endings (LF)
+├── SECURITY.md                   # vulnerability disclosure policy
+├── LICENSE                       # MIT
+├── vercel.json                   # build config + security & cache headers
 ├── package.json                  # convenience scripts (install/build/start/typecheck)
 └── README.md
 ```
@@ -272,6 +281,60 @@ Then, to actually get indexed: deploy on a stable URL (ideally a custom domain),
 site in [Google Search Console](https://search.google.com/search-console) and request
 indexing, and earn a few inbound links (Reddit, the WARNO Discord, your GitHub README).
 Rankings build over days-to-weeks, not instantly.
+
+---
+
+## Security
+
+- **HTTP security headers** via [`helmet`](https://helmetjs.github.io/) on the API, plus a
+  matching Content-Security-Policy for the static site in `vercel.json` (allows only self +
+  Google Fonts).
+- **Rate limiting** — `/api` is capped at 120 requests/minute/IP (`express-rate-limit`),
+  with `trust proxy` set so client IPs are correct behind Vercel.
+- **Request body limit** of `64kb` on JSON.
+- **No secrets in the repo** — `.env*` is git-ignored and the app needs no API keys.
+- See [`SECURITY.md`](SECURITY.md) for the disclosure policy.
+
+After the first push, turn on the free extras in **repo Settings → Code security**:
+Dependabot alerts + security updates, and secret scanning.
+
+---
+
+## Repository setup
+
+The repo is already initialized. To wire up discoverability and protection:
+
+```bash
+# add the new security/CI/meta files
+git add .
+git commit -m "Add security headers, rate limiting, CI, license, SEO FAQ"
+git push
+
+# discoverability: description + topics (shows up in GitHub search & topic pages)
+gh repo edit Hung1510/Warno-Deck-Randomizer \
+  --description "Roll a random WARNO battlegroup and build a fun or meta deck — 56 battlegroups, 14 nations." \
+  --homepage "https://warno-deck-randomizer.vercel.app" \
+  --add-topic warno --add-topic deck-builder --add-topic randomizer \
+  --add-topic eugen-systems --add-topic wargame --add-topic rts \
+  --add-topic react --add-topic typescript --add-topic vite --add-topic express \
+  --add-topic nato --add-topic warsaw-pact
+```
+
+Branch protection on `main` (requires the CI check to pass before merge):
+
+```bash
+gh api -X PUT repos/Hung1510/Warno-Deck-Randomizer/branches/main/protection \
+  -H "Accept: application/vnd.github+json" \
+  -f "required_status_checks[strict]=true" \
+  -f "required_status_checks[contexts][]=Typecheck & build" \
+  -f "enforce_admins=false" \
+  -f "required_pull_request_reviews[required_approving_review_count]=1" \
+  -f "restrictions=" 2>/dev/null || echo "Or set it via Settings → Branches → Add rule."
+```
+
+> `gh` is the [GitHub CLI](https://cli.github.com/). If you'd rather click: add topics on
+> the repo's main page (gear icon next to **About**), and add a branch rule under
+> **Settings → Branches**.
 
 ---
 

@@ -2,10 +2,6 @@ import { UNITS_BY_ID } from '../data/units.js';
 import { DIVISIONS_BY_ID, CATEGORIES } from '../data/divisions.js';
 import type { CategoryCode, Deck, DeckResponse, DeckUnit, Mode } from '../types.js';
 
-// A portable deck code: base64url of a compact JSON payload. Unlike a seed (which
-// only reproduces a roll against the *current* dataset), a deck code carries the
-// actual cards, so it re-renders the same deck even if the roster changes.
-
 interface DeckCodePayload {
   v: 1;
   d: string;                              // division id
