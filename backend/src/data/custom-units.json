@@ -1,0 +1,3718 @@
+[
+  {
+    "id": "soviet-union__2s12-120mm",
+    "name": "2S12 120mm",
+    "nation": "Soviet Union",
+    "cat": "ART",
+    "cost": 50,
+    "meta": 4,
+    "fun": 10,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__2s1-gvozdika",
+    "name": "2S1 Gvozdika",
+    "nation": "Soviet Union",
+    "cat": "ART",
+    "cost": 150,
+    "meta": 8,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__2s3m-akatsiya",
+    "name": "2S3M Akatsiya",
+    "nation": "Soviet Union",
+    "cat": "ART",
+    "cost": 210,
+    "meta": 10,
+    "fun": 6,
+    "tags": []
+  },
+  {
+    "id": "belgium__a-109ba-htpt",
+    "name": "A.109BA HTpt.",
+    "nation": "Belgium",
+    "cat": "HEL",
+    "cost": 40,
+    "meta": 4,
+    "fun": 10,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "belgium__a-109ha-1",
+    "name": "A.109HA-1",
+    "nation": "Belgium",
+    "cat": "HEL",
+    "cost": 85,
+    "meta": 5,
+    "fun": 9,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "belgium__a-109ha-2",
+    "name": "A.109HA-2",
+    "nation": "Belgium",
+    "cat": "HEL",
+    "cost": 95,
+    "meta": 6,
+    "fun": 9,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "usa__ab-engineers-ldr",
+    "name": "AB Engineers LDR",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 115,
+    "meta": 7,
+    "fun": 6,
+    "tags": []
+  },
+  {
+    "id": "usa__ab-fire-team",
+    "name": "AB Fire-Team",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__ab-m1025-humvee-agl",
+    "name": "AB M1025 HUMVEE AGL",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "usa__ab-m1025-humvee-cp",
+    "name": "AB M1025 Humvee CP",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 90,
+    "meta": 6,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "usa__ab-m2hb-12-7mm",
+    "name": "AB M2HB 12.7mm",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__ab-m2hb-12-7mm-m63",
+    "name": "AB M2HB 12.7mm M63",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__ab-m60-7-62mm",
+    "name": "AB M60 7.62mm",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__ab-mp-patrol",
+    "name": "AB MP Patrol",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__ab-mk-19-40mm",
+    "name": "AB Mk.19 40mm",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__ab-tow-2",
+    "name": "AB TOW-2",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 100,
+    "meta": 6,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "usa__ah-1f-hog",
+    "name": "AH-1F Hog",
+    "nation": "USA",
+    "cat": "HEL",
+    "cost": 130,
+    "meta": 7,
+    "fun": 8,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "usa__ah-1f-towcobra",
+    "name": "AH-1F Towcobra",
+    "nation": "USA",
+    "cat": "HEL",
+    "cost": 130,
+    "meta": 7,
+    "fun": 8,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "usa__ah-64a-apache",
+    "name": "AH-64A Apache",
+    "nation": "USA",
+    "cat": "HEL",
+    "cost": 240,
+    "meta": 10,
+    "fun": 6,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "belgium__aifv-b-50",
+    "name": "AIFV-B-50",
+    "nation": "Belgium",
+    "cat": "TNK",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "belgium__aifv-b-c25",
+    "name": "AIFV-B-C25",
+    "nation": "Belgium",
+    "cat": "TNK",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "belgium__aifv-b-cp",
+    "name": "AIFV-B-CP",
+    "nation": "Belgium",
+    "cat": "LOG",
+    "cost": 55,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "belgium__aifv-b-mil",
+    "name": "AIFV-B-MIL",
+    "nation": "Belgium",
+    "cat": "TNK",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "belgium__amx-13-mod-56-vci",
+    "name": "AMX-13 Mod.56 VCI",
+    "nation": "Belgium",
+    "cat": "TNK",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__aero-engineers",
+    "name": "Aero-Engineers",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__aero-engineers-ldr",
+    "name": "Aero-Engineers LDR",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 85,
+    "meta": 5,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "usa__aero-fire-team",
+    "name": "Aero-Fire Team",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__aero-fire-team-ldr",
+    "name": "Aero-Fire Team LDR",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__aero-m2hb-12-7mm",
+    "name": "Aero-M2HB 12.7mm",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__aero-m60-7-62mm",
+    "name": "Aero-M60 7.62mm",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 15,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__aero-rifles",
+    "name": "Aero-Rifles",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 55,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__aero-rifles-ldr",
+    "name": "Aero-Rifles LDR",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__aero-scouts",
+    "name": "Aero-Scouts",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 65,
+    "meta": 5,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "usa__aero-tow-2",
+    "name": "Aero-TOW-2",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 95,
+    "meta": 6,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "usa__air-cav-troopers",
+    "name": "Air Cav. Troopers",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 55,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__airborne",
+    "name": "Airborne",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 65,
+    "meta": 5,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__airborne-engineers",
+    "name": "Airborne Engineers",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 55,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__airborne-gunners",
+    "name": "Airborne Gunners",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__airborne-ldr",
+    "name": "Airborne LDR",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 115,
+    "meta": 7,
+    "fun": 6,
+    "tags": []
+  },
+  {
+    "id": "usa__airborne-scouts",
+    "name": "Airborne Scouts",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "usa__alaskan-cav-scouts",
+    "name": "Alaskan Cav. Scouts",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "usa__alaskan-scouts",
+    "name": "Alaskan Scouts",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__alaskan-sniper",
+    "name": "Alaskan Sniper",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "belgium__alouette-ii",
+    "name": "Alouette II",
+    "nation": "Belgium",
+    "cat": "REC",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "belgium__alouette-ii-transport",
+    "name": "Alouette II (transport)",
+    "nation": "Belgium",
+    "cat": "HEL",
+    "cost": 30,
+    "meta": 3,
+    "fun": 10,
+    "tags": [
+      "air",
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__bm-21-1-grad",
+    "name": "BM-21-1 Grad",
+    "nation": "Soviet Union",
+    "cat": "ART",
+    "cost": 220,
+    "meta": 10,
+    "fun": 6,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__bmp-1",
+    "name": "BMP-1",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__bmp-1k3",
+    "name": "BMP-1K3",
+    "nation": "Soviet Union",
+    "cat": "LOG",
+    "cost": 70,
+    "meta": 5,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__bmp-1pg",
+    "name": "BMP-1PG",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "soviet-union__bmp-1p",
+    "name": "BMP-1P",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "soviet-union__bmp-2",
+    "name": "BMP-2",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 65,
+    "meta": 5,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "soviet-union__bmp-2ag",
+    "name": "BMP-2AG",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 70,
+    "meta": 5,
+    "fun": 7,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "soviet-union__bmp-2d",
+    "name": "BMP-2D",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 65,
+    "meta": 5,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "soviet-union__brdm-2u",
+    "name": "BRDM-2U",
+    "nation": "Soviet Union",
+    "cat": "LOG",
+    "cost": 90,
+    "meta": 6,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__brdm-2",
+    "name": "BRDM-2",
+    "nation": "Soviet Union",
+    "cat": "REC",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "soviet-union__brdm-2-konkurs",
+    "name": "BRDM-2 Konkurs",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 70,
+    "meta": 5,
+    "fun": 7,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "soviet-union__btr-60pb",
+    "name": "BTR-60PB",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__btr-70",
+    "name": "BTR-70",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__btr-70-komendatura",
+    "name": "BTR-70 Komendatura",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "soviet-union__btr-80",
+    "name": "BTR-80",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "united-kingdom__berlin-rifles",
+    "name": "Berlin Rifles",
+    "nation": "United Kingdom",
+    "cat": "INF",
+    "cost": 65,
+    "meta": 5,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "canada__blowpipe",
+    "name": "Blowpipe",
+    "nation": "Canada",
+    "cat": "AA",
+    "cost": 10,
+    "meta": 2,
+    "fun": 9,
+    "tags": [
+      "sam",
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__c1-155mm",
+    "name": "C1 155mm",
+    "nation": "Canada",
+    "cat": "ART",
+    "cost": 95,
+    "meta": 6,
+    "fun": 9,
+    "tags": []
+  },
+  {
+    "id": "canada__c3-81mm",
+    "name": "C3 81mm",
+    "nation": "Canada",
+    "cat": "ART",
+    "cost": 35,
+    "meta": 3,
+    "fun": 10,
+    "tags": []
+  },
+  {
+    "id": "usa__cewi",
+    "name": "CEWI",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__cf-116",
+    "name": "CF-116",
+    "nation": "Canada",
+    "cat": "AIR",
+    "cost": 165,
+    "meta": 9,
+    "fun": 7,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "canada__cf-188",
+    "name": "CF-188",
+    "nation": "Canada",
+    "cat": "AIR",
+    "cost": 265,
+    "meta": 10,
+    "fun": 5,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "canada__cfmp",
+    "name": "CFMP",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__ch-135",
+    "name": "CH-135",
+    "nation": "Canada",
+    "cat": "HEL",
+    "cost": 40,
+    "meta": 4,
+    "fun": 10,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "canada__ch-136",
+    "name": "CH-136",
+    "nation": "Canada",
+    "cat": "REC",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "canada__ch-136-mini-tat",
+    "name": "CH-136 MINI-TAT",
+    "nation": "Canada",
+    "cat": "REC",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "canada__ch-147-supply",
+    "name": "CH-147 Supply",
+    "nation": "Canada",
+    "cat": "LOG",
+    "cost": 65,
+    "meta": 5,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__ch-47c-chinook",
+    "name": "CH-47C Chinook",
+    "nation": "USA",
+    "cat": "HEL",
+    "cost": 50,
+    "meta": 4,
+    "fun": 10,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "usa__ch-47c-supply",
+    "name": "CH-47C Supply",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 65,
+    "meta": 5,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__ch-54b-tarhe-supply",
+    "name": "CH-54B Tarhe Supply",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 55,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "canada__cl-89",
+    "name": "CL-89",
+    "nation": "Canada",
+    "cat": "REC",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "luxembourg__cmdt-fusiliers",
+    "name": "CMDT Fusiliers",
+    "nation": "Luxembourg",
+    "cat": "INF",
+    "cost": 105,
+    "meta": 6,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "belgium__cmdt-mech-fusilier",
+    "name": "CMDT Mech. Fusilier",
+    "nation": "Belgium",
+    "cat": "INF",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "belgium__cmdt-pioniers",
+    "name": "CMDT Pioniers",
+    "nation": "Belgium",
+    "cat": "INF",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__colt",
+    "name": "COLT",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "canada__ct-133-silver-star",
+    "name": "CT-133 Silver Star",
+    "nation": "Canada",
+    "cat": "AIR",
+    "cost": 90,
+    "meta": 6,
+    "fun": 9,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "canada__cucv",
+    "name": "CUCV",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__cucv-blowpipe",
+    "name": "CUCV Blowpipe",
+    "nation": "Canada",
+    "cat": "TNK",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__cucv-cfmp",
+    "name": "CUCV CFMP",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "belgium__cvr-t-scimitar",
+    "name": "CVR(T) Scimitar",
+    "nation": "Belgium",
+    "cat": "REC",
+    "cost": 55,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "belgium__cvr-t-scorpion",
+    "name": "CVR(T) Scorpion",
+    "nation": "Belgium",
+    "cat": "REC",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "belgium__cvr-t-spartan",
+    "name": "CVR(T) Spartan",
+    "nation": "Belgium",
+    "cat": "REC",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "belgium__cvr-t-striker",
+    "name": "CVR(T) Striker",
+    "nation": "Belgium",
+    "cat": "TNK",
+    "cost": 65,
+    "meta": 5,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "belgium__cvr-t-sultan",
+    "name": "CVR(T) Sultan",
+    "nation": "Belgium",
+    "cat": "LOG",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "canada__cougar",
+    "name": "Cougar",
+    "nation": "Canada",
+    "cat": "TNK",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "canada__cougar-cp",
+    "name": "Cougar CP",
+    "nation": "Canada",
+    "cat": "TNK",
+    "cost": 65,
+    "meta": 5,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "canada__cougar-recce",
+    "name": "Cougar Recce",
+    "nation": "Canada",
+    "cat": "REC",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "soviet-union__d-30-122mm",
+    "name": "D-30 122mm",
+    "nation": "Soviet Union",
+    "cat": "ART",
+    "cost": 95,
+    "meta": 6,
+    "fun": 9,
+    "tags": []
+  },
+  {
+    "id": "usa__delta",
+    "name": "Delta",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 75,
+    "meta": 5,
+    "fun": 7,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "usa__dismount-troopers",
+    "name": "Dismount. Troopers",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "belgium__d-p-t-de-munition",
+    "name": "Dépôt de Munition",
+    "nation": "Belgium",
+    "cat": "LOG",
+    "cost": 175,
+    "meta": 9,
+    "fun": 5,
+    "tags": []
+  },
+  {
+    "id": "canada__ef-101b-electric-voodoo",
+    "name": "EF-101B Electric Voodoo",
+    "nation": "Canada",
+    "cat": "AIR",
+    "cost": 170,
+    "meta": 9,
+    "fun": 7,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "belgium__esr-gvp",
+    "name": "ESR-GVP",
+    "nation": "Belgium",
+    "cat": "REC",
+    "cost": 75,
+    "meta": 5,
+    "fun": 7,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "usa__engineers",
+    "name": "Engineers",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__engineers-ldr",
+    "name": "Engineers LDR.",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 70,
+    "meta": 5,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "usa__f-111e",
+    "name": "F-111E",
+    "nation": "USA",
+    "cat": "AIR",
+    "cost": 215,
+    "meta": 10,
+    "fun": 6,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "usa__f-15c-eagle",
+    "name": "F-15C Eagle",
+    "nation": "USA",
+    "cat": "AIR",
+    "cost": 280,
+    "meta": 10,
+    "fun": 5,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "belgium__f-16a-aa",
+    "name": "F-16A (AA)",
+    "nation": "Belgium",
+    "cat": "AIR",
+    "cost": 175,
+    "meta": 9,
+    "fun": 7,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "belgium__f-16a",
+    "name": "F-16A",
+    "nation": "Belgium",
+    "cat": "AIR",
+    "cost": 235,
+    "meta": 10,
+    "fun": 6,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "usa__f-4e-phantom-ii",
+    "name": "F-4E Phantom II",
+    "nation": "USA",
+    "cat": "AIR",
+    "cost": 185,
+    "meta": 9,
+    "fun": 7,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "usa__f-4g-wild-weasel-v",
+    "name": "F-4G Wild Weasel V",
+    "nation": "USA",
+    "cat": "AIR",
+    "cost": 215,
+    "meta": 10,
+    "fun": 6,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "usa__folt",
+    "name": "FOLT",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__fagot",
+    "name": "Fagot",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "canada__field-supply-point",
+    "name": "Field Supply Point",
+    "nation": "Canada",
+    "cat": "LOG",
+    "cost": 175,
+    "meta": 9,
+    "fun": 5,
+    "tags": []
+  },
+  {
+    "id": "usa__field-supply-point",
+    "name": "Field Supply Point",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 175,
+    "meta": 9,
+    "fun": 5,
+    "tags": []
+  },
+  {
+    "id": "usa__fire-team",
+    "name": "Fire Team",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__fire-team-ldr",
+    "name": "Fire Team LDR.",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "luxembourg__fusiliers",
+    "name": "Fusiliers",
+    "nation": "Luxembourg",
+    "cat": "INF",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__gaz-66",
+    "name": "GAZ-66",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "belgium__gepard-b2",
+    "name": "Gepard B2",
+    "nation": "Belgium",
+    "cat": "AA",
+    "cost": 85,
+    "meta": 5,
+    "fun": 7,
+    "tags": [
+      "sam"
+    ]
+  },
+  {
+    "id": "usa__green-berets",
+    "name": "Green Berets",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__green-berets-ldr",
+    "name": "Green Berets LDR",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 100,
+    "meta": 6,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "canada__grizzly",
+    "name": "Grizzly",
+    "nation": "Canada",
+    "cat": "TNK",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__gunners",
+    "name": "Gunners",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__hemtt",
+    "name": "HEMTT",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "canada__i-tow",
+    "name": "I-TOW",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 80,
+    "meta": 5,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "usa__i-tow",
+    "name": "I-TOW",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 80,
+    "meta": 5,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "belgium__iltis",
+    "name": "Iltis",
+    "nation": "Belgium",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__iltis",
+    "name": "Iltis",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__iltis-cp",
+    "name": "Iltis CP",
+    "nation": "Canada",
+    "cat": "LOG",
+    "cost": 80,
+    "meta": 5,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "belgium__iltis-m2hb",
+    "name": "Iltis M2HB",
+    "nation": "Belgium",
+    "cat": "REC",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "belgium__iltis-milan-2",
+    "name": "Iltis MILAN 2",
+    "nation": "Belgium",
+    "cat": "TNK",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "belgium__iltis-pc",
+    "name": "Iltis PC",
+    "nation": "Belgium",
+    "cat": "LOG",
+    "cost": 85,
+    "meta": 5,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "usa__joh-58c",
+    "name": "JOH-58C",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 55,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "belgium__jpk-90",
+    "name": "JPK 90",
+    "nation": "Belgium",
+    "cat": "TNK",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "canada__javelin",
+    "name": "Javelin",
+    "nation": "Canada",
+    "cat": "AA",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "sam",
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__komendatura",
+    "name": "Komendatura",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__konkurs",
+    "name": "Konkurs",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 65,
+    "meta": 5,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__kraz-255b",
+    "name": "KrAZ-255B",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__kraz-255b-snab",
+    "name": "KrAZ-255B Snab.",
+    "nation": "Soviet Union",
+    "cat": "LOG",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__lrs",
+    "name": "LRS",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 80,
+    "meta": 5,
+    "fun": 7,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "belgium__leopard-1",
+    "name": "Leopard 1",
+    "nation": "Belgium",
+    "cat": "TNK",
+    "cost": 110,
+    "meta": 6,
+    "fun": 7,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "belgium__leopard-1-be-pc",
+    "name": "Leopard 1(BE) PC",
+    "nation": "Belgium",
+    "cat": "TNK",
+    "cost": 130,
+    "meta": 7,
+    "fun": 6,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "belgium__leopard-1a5",
+    "name": "Leopard 1A5",
+    "nation": "Belgium",
+    "cat": "TNK",
+    "cost": 125,
+    "meta": 7,
+    "fun": 6,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "belgium__leopard-1a5-be-pc",
+    "name": "Leopard 1A5(BE) PC",
+    "nation": "Belgium",
+    "cat": "TNK",
+    "cost": 145,
+    "meta": 8,
+    "fun": 6,
+    "tags": [
+      "heavy"
+    ]
+  },
+  {
+    "id": "canada__leopard-c1",
+    "name": "Leopard C1",
+    "nation": "Canada",
+    "cat": "TNK",
+    "cost": 115,
+    "meta": 7,
+    "fun": 6,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "canada__leopard-c1-cp",
+    "name": "Leopard C1 CP",
+    "nation": "Canada",
+    "cat": "TNK",
+    "cost": 135,
+    "meta": 7,
+    "fun": 6,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "usa__light-rifles",
+    "name": "Light Rifles",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__light-rifles-ldr",
+    "name": "Light Rifles LDR",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__m1008-cucv",
+    "name": "M1008 CUCV",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m1008-cucv-agl",
+    "name": "M1008 CUCV AGL",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m1008-cucv-m60",
+    "name": "M1008 CUCV M60",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 15,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m1008-cucv-mp",
+    "name": "M1008 CUCV MP",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m1008-cucv-supply",
+    "name": "M1008 CUCV Supply",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m1025-humvee-cp",
+    "name": "M1025 HUMVEE CP",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 85,
+    "meta": 5,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "usa__m1025-humvee-agl",
+    "name": "M1025 Humvee AGL",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "luxembourg__m1025-humvee-cp",
+    "name": "M1025 Humvee CP",
+    "nation": "Luxembourg",
+    "cat": "LOG",
+    "cost": 90,
+    "meta": 6,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "luxembourg__m1025-humvee-m2hb",
+    "name": "M1025 Humvee M2HB",
+    "nation": "Luxembourg",
+    "cat": "REC",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m1025-humvee-m2hb",
+    "name": "M1025 Humvee M2HB",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m1025-humvee-mp",
+    "name": "M1025 Humvee MP",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "luxembourg__m1025-humvee-tow-2",
+    "name": "M1025 Humvee TOW-2",
+    "nation": "Luxembourg",
+    "cat": "TNK",
+    "cost": 85,
+    "meta": 5,
+    "fun": 7,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "luxembourg__m1038-humvee",
+    "name": "M1038 Humvee",
+    "nation": "Luxembourg",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m1038-humvee",
+    "name": "M1038 Humvee",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m106a2-mortar",
+    "name": "M106A2 Mortar",
+    "nation": "USA",
+    "cat": "ART",
+    "cost": 75,
+    "meta": 5,
+    "fun": 9,
+    "tags": []
+  },
+  {
+    "id": "canada__m109a1",
+    "name": "M109A1",
+    "nation": "Canada",
+    "cat": "ART",
+    "cost": 210,
+    "meta": 10,
+    "fun": 6,
+    "tags": []
+  },
+  {
+    "id": "belgium__m109a2",
+    "name": "M109A2",
+    "nation": "Belgium",
+    "cat": "ART",
+    "cost": 210,
+    "meta": 10,
+    "fun": 6,
+    "tags": []
+  },
+  {
+    "id": "usa__m109a2",
+    "name": "M109A2",
+    "nation": "USA",
+    "cat": "ART",
+    "cost": 210,
+    "meta": 10,
+    "fun": 6,
+    "tags": []
+  },
+  {
+    "id": "belgium__m113a1-b",
+    "name": "M113A1-B",
+    "nation": "Belgium",
+    "cat": "TNK",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "belgium__m113a1-b-mil",
+    "name": "M113A1-B-MIL",
+    "nation": "Belgium",
+    "cat": "TNK",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "belgium__m113a1-b-scb",
+    "name": "M113A1-B-SCB",
+    "nation": "Belgium",
+    "cat": "REC",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__m113a1",
+    "name": "M113A1",
+    "nation": "Canada",
+    "cat": "TNK",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__m113a1-dozer",
+    "name": "M113A1 Dozer",
+    "nation": "Canada",
+    "cat": "TNK",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__m113a1-rcl",
+    "name": "M113A1 RCL",
+    "nation": "Canada",
+    "cat": "TNK",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "canada__m113a1-recce",
+    "name": "M113A1 Recce",
+    "nation": "Canada",
+    "cat": "REC",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m113a2-supply",
+    "name": "M113A2 Supply",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m113a3",
+    "name": "M113A3",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m113a3-acav",
+    "name": "M113A3 ACAV",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "usa__m113a3-dragon",
+    "name": "M113A3 Dragon",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__m113-adats",
+    "name": "M113 ADATS",
+    "nation": "Canada",
+    "cat": "AA",
+    "cost": 190,
+    "meta": 10,
+    "fun": 5,
+    "tags": [
+      "sam"
+    ]
+  },
+  {
+    "id": "canada__m113-i-tow",
+    "name": "M113 I-TOW",
+    "nation": "Canada",
+    "cat": "TNK",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "canada__m113-lml",
+    "name": "M113 LML",
+    "nation": "Canada",
+    "cat": "AA",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "sam"
+    ]
+  },
+  {
+    "id": "canada__m113-lynx",
+    "name": "M113 Lynx",
+    "nation": "Canada",
+    "cat": "REC",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "canada__m113-tua",
+    "name": "M113 TUA",
+    "nation": "Canada",
+    "cat": "TNK",
+    "cost": 75,
+    "meta": 5,
+    "fun": 7,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "luxembourg__m118-105mm",
+    "name": "M118 105mm",
+    "nation": "Luxembourg",
+    "cat": "ART",
+    "cost": 85,
+    "meta": 5,
+    "fun": 9,
+    "tags": []
+  },
+  {
+    "id": "usa__m150a1",
+    "name": "M150A1",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "usa__m151",
+    "name": "M151",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__m151a2-i-tow",
+    "name": "M151A2 I-TOW",
+    "nation": "Canada",
+    "cat": "TNK",
+    "cost": 55,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "usa__m151a2-m2hb",
+    "name": "M151A2 M2HB",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__m151a2-mutt",
+    "name": "M151A2 MUTT",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m151-mutt-cp",
+    "name": "M151 MUTT CP",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 80,
+    "meta": 5,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "usa__m163a2-pivads",
+    "name": "M163A2 PIVADS",
+    "nation": "USA",
+    "cat": "AA",
+    "cost": 70,
+    "meta": 5,
+    "fun": 7,
+    "tags": [
+      "sam"
+    ]
+  },
+  {
+    "id": "belgium__m167a1-vads-20mm",
+    "name": "M167A1 VADS 20mm",
+    "nation": "Belgium",
+    "cat": "AA",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "sam"
+    ]
+  },
+  {
+    "id": "usa__m1a1-ha-abrams",
+    "name": "M1A1(HA) Abrams",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 310,
+    "meta": 10,
+    "fun": 2,
+    "tags": [
+      "heavy"
+    ]
+  },
+  {
+    "id": "usa__m1a1-ha-abrams-cp",
+    "name": "M1A1(HA) Abrams CP",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 350,
+    "meta": 10,
+    "fun": 1,
+    "tags": [
+      "heavy"
+    ]
+  },
+  {
+    "id": "usa__m1a1-abrams",
+    "name": "M1A1 Abrams",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 275,
+    "meta": 10,
+    "fun": 3,
+    "tags": [
+      "heavy"
+    ]
+  },
+  {
+    "id": "usa__m1a1-abrams-cp",
+    "name": "M1A1 Abrams CP",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 315,
+    "meta": 10,
+    "fun": 2,
+    "tags": [
+      "heavy"
+    ]
+  },
+  {
+    "id": "belgium__m1-81mm",
+    "name": "M1 81mm",
+    "nation": "Belgium",
+    "cat": "ART",
+    "cost": 30,
+    "meta": 3,
+    "fun": 10,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "luxembourg__m252-81mm",
+    "name": "M252 81mm",
+    "nation": "Luxembourg",
+    "cat": "ART",
+    "cost": 40,
+    "meta": 4,
+    "fun": 10,
+    "tags": []
+  },
+  {
+    "id": "usa__m270-mlrs-clu",
+    "name": "M270 MLRS (CLU)",
+    "nation": "USA",
+    "cat": "ART",
+    "cost": 300,
+    "meta": 10,
+    "fun": 4,
+    "tags": []
+  },
+  {
+    "id": "usa__m274-mule-m40a1",
+    "name": "M274 Mule M40A1",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__m274-supply-mule",
+    "name": "M274 Supply Mule",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m2a1-bradley-cp",
+    "name": "M2A1 Bradley CP",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 100,
+    "meta": 6,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "usa__m2a1-bradley-ifv",
+    "name": "M2A1 Bradley IFV",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 75,
+    "meta": 5,
+    "fun": 7,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "usa__m2a2-bradley-cp",
+    "name": "M2A2 Bradley CP",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 115,
+    "meta": 7,
+    "fun": 6,
+    "tags": []
+  },
+  {
+    "id": "usa__m2a2-bradley-ifv",
+    "name": "M2A2 Bradley IFV",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 85,
+    "meta": 5,
+    "fun": 7,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "belgium__m2hb-12-7mm",
+    "name": "M2HB 12,7mm",
+    "nation": "Belgium",
+    "cat": "INF",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__m2hb-12-7mm",
+    "name": "M2HB 12,7mm",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "luxembourg__m2hb-12-7mm",
+    "name": "M2HB 12,7mm",
+    "nation": "Luxembourg",
+    "cat": "INF",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__m2hb-12-7mm",
+    "name": "M2HB 12,7mm",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "belgium__m30-107mm",
+    "name": "M30 107mm",
+    "nation": "Belgium",
+    "cat": "ART",
+    "cost": 45,
+    "meta": 4,
+    "fun": 10,
+    "tags": []
+  },
+  {
+    "id": "usa__m30-107mm",
+    "name": "M30 107mm",
+    "nation": "USA",
+    "cat": "ART",
+    "cost": 45,
+    "meta": 4,
+    "fun": 10,
+    "tags": []
+  },
+  {
+    "id": "usa__m35",
+    "name": "M35",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m35-supply",
+    "name": "M35 Supply",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m3a1-bradley-cfv",
+    "name": "M3A1 Bradley CFV",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 120,
+    "meta": 7,
+    "fun": 6,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "usa__m48a1-chaparral",
+    "name": "M48A1 Chaparral",
+    "nation": "USA",
+    "cat": "AA",
+    "cost": 135,
+    "meta": 7,
+    "fun": 6,
+    "tags": [
+      "sam"
+    ]
+  },
+  {
+    "id": "usa__m548a2",
+    "name": "M548A2",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "canada__m548a2-supply",
+    "name": "M548A2 Supply",
+    "nation": "Canada",
+    "cat": "LOG",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__m561-supply-goat",
+    "name": "M561 Supply Goat",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m577-cpc",
+    "name": "M577 CPC",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "canada__m577-queen-mary-cp",
+    "name": "M577 Queen Mary CP",
+    "nation": "Canada",
+    "cat": "LOG",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__m60-7-62mm",
+    "name": "M60 7,62mm",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 15,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m728-cev",
+    "name": "M728 CEV",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 85,
+    "meta": 5,
+    "fun": 7,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "belgium__m75-aiv",
+    "name": "M75 AIV",
+    "nation": "Belgium",
+    "cat": "TNK",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m813a1-supply",
+    "name": "M813A1 Supply",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__m901a3-itv",
+    "name": "M901A3 ITV",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 75,
+    "meta": 5,
+    "fun": 7,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "usa__m901-itv",
+    "name": "M901 ITV",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "usa__m981-fistv",
+    "name": "M981 FISTV",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 15,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m998t-isc-m2hb",
+    "name": "M998T ISC M2HB",
+    "nation": "USA",
+    "cat": "TNK",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "luxembourg__m998-humvee",
+    "name": "M998 Humvee",
+    "nation": "Luxembourg",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__m998-humvee",
+    "name": "M998 Humvee",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "belgium__mag-7-62mm",
+    "name": "MAG 7,62mm",
+    "nation": "Belgium",
+    "cat": "INF",
+    "cost": 15,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__mag-7-62mm",
+    "name": "MAG 7,62mm",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 15,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__man-kat-6x6-supply",
+    "name": "MAN Kat 6x6 Supply",
+    "nation": "Canada",
+    "cat": "LOG",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "belgium__man-z311-log",
+    "name": "MAN Z311 Log.",
+    "nation": "Belgium",
+    "cat": "LOG",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "belgium__man-z311-mi-50",
+    "name": "MAN Z311 Mi.50",
+    "nation": "Belgium",
+    "cat": "AA",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "sam"
+    ]
+  },
+  {
+    "id": "soviet-union__mav",
+    "name": "MAV",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "belgium__milan-1",
+    "name": "MILAN 1",
+    "nation": "Belgium",
+    "cat": "INF",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "belgium__milan-2",
+    "name": "MILAN 2",
+    "nation": "Belgium",
+    "cat": "INF",
+    "cost": 65,
+    "meta": 5,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "canada__mlvw",
+    "name": "MLVW",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__mlvw-supply",
+    "name": "MLVW Supply",
+    "nation": "Canada",
+    "cat": "LOG",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__mp-21m-manevr-m",
+    "name": "MP-21M Manevr-M",
+    "nation": "Soviet Union",
+    "cat": "LOG",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__mp-leader",
+    "name": "MP Leader",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 65,
+    "meta": 5,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__mp-patrol",
+    "name": "MP Patrol",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__mt-12-rapira-100mm",
+    "name": "MT-12 Rapira 100mm",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 80,
+    "meta": 5,
+    "fun": 7,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "soviet-union__mt-lb",
+    "name": "MT-LB",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 15,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__mt-lb-snab",
+    "name": "MT-LB Snab.",
+    "nation": "Soviet Union",
+    "cat": "LOG",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__mech-cp-escort",
+    "name": "Mech. CP Escort",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "belgium__mech-fusilier",
+    "name": "Mech. Fusilier",
+    "nation": "Belgium",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "canada__mech-recce",
+    "name": "Mech. Recce",
+    "nation": "Canada",
+    "cat": "REC",
+    "cost": 55,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "canada__mech-rifles",
+    "name": "Mech. Rifles",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__mech-rifles",
+    "name": "Mech. Rifles",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__mech-rifles-ldr",
+    "name": "Mech. Rifles LDR",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "canada__mech-rifles-ldr",
+    "name": "Mech. Rifles LDR.",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 75,
+    "meta": 5,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__mi-2",
+    "name": "Mi-2",
+    "nation": "Soviet Union",
+    "cat": "REC",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__mi-9",
+    "name": "Mi-9",
+    "nation": "Soviet Union",
+    "cat": "LOG",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "belgium__mirage-5ba",
+    "name": "Mirage 5BA",
+    "nation": "Belgium",
+    "cat": "AIR",
+    "cost": 265,
+    "meta": 10,
+    "fun": 5,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "belgium__mirage-5ba-mirsip",
+    "name": "Mirage 5BA MirSIP",
+    "nation": "Belgium",
+    "cat": "AIR",
+    "cost": 270,
+    "meta": 10,
+    "fun": 5,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "belgium__mistral",
+    "name": "Mistral",
+    "nation": "Belgium",
+    "cat": "AA",
+    "cost": 65,
+    "meta": 5,
+    "fun": 8,
+    "tags": [
+      "sam"
+    ]
+  },
+  {
+    "id": "usa__mk-19-40mm",
+    "name": "Mk.19 40mm",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "canada__mot-rifles",
+    "name": "Mot. Rifles",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__mot-rifles-ldr",
+    "name": "Mot. Rifles LDR.",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__motostrelki",
+    "name": "Motostrelki",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__motostrelki-kom",
+    "name": "Motostrelki KOM.",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__n-g-engineers",
+    "name": "N.G. Engineers",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__n-g-engineers-ldr",
+    "name": "N.G. Engineers LDR.",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__n-g-fire-team",
+    "name": "N.G. Fire Team",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__n-g-fire-team-ldr",
+    "name": "N.G. Fire Team LDR",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__n-g-i-tow",
+    "name": "N.G. I-TOW",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 75,
+    "meta": 5,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "usa__n-g-m151ac",
+    "name": "N.G. M151AC",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__n-g-m2hb-12-7mm",
+    "name": "N.G. M2HB 12.7mm",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__n-g-m40a1",
+    "name": "N.G. M40A1",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__n-g-m60-7-62mm",
+    "name": "N.G. M60 7.62mm",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 10,
+    "meta": 2,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__n-g-rifles",
+    "name": "N.G. Rifles",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__n-g-rifles-ldr",
+    "name": "N.G. Rifles LDR",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__n-g-tow",
+    "name": "N.G. TOW",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__navy-seals",
+    "name": "Navy Seals",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 90,
+    "meta": 6,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "usa__oh-58c-cmd",
+    "name": "OH-58C CMD",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__oh-58c-scout",
+    "name": "OH-58C Scout",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "usa__oh-58d-kiowa-wr",
+    "name": "OH-58D Kiowa Wr.",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 120,
+    "meta": 7,
+    "fun": 6,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "soviet-union__pkm-7-62mm",
+    "name": "PKM 7,62mm",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 15,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "belgium__patrouilles",
+    "name": "Patrouilles",
+    "nation": "Belgium",
+    "cat": "REC",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__pionier",
+    "name": "Pionier",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "canada__pionier-ldr",
+    "name": "Pionier LDR.",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "belgium__pioniers",
+    "name": "Pioniers",
+    "nation": "Belgium",
+    "cat": "INF",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__plamya-30mm",
+    "name": "Plamya 30mm",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "belgium__pr-v-t",
+    "name": "Prévôté",
+    "nation": "Belgium",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__pulemetchiki",
+    "name": "Pulemetchiki",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__rangers",
+    "name": "Rangers",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__rangers-ldr",
+    "name": "Rangers LDR.",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 75,
+    "meta": 5,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "canada__recce",
+    "name": "Recce",
+    "nation": "Canada",
+    "cat": "REC",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__res-c5-7-62mm",
+    "name": "Res. C5 7,62mm",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 10,
+    "meta": 2,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__res-m113a1",
+    "name": "Res. M113A1",
+    "nation": "Canada",
+    "cat": "TNK",
+    "cost": 15,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "tank",
+      "cheap"
+    ]
+  },
+  {
+    "id": "canada__reserve",
+    "name": "Reserve",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "canada__reserve-ldr",
+    "name": "Reserve LDR.",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "belgium__reservistes",
+    "name": "Reservistes",
+    "nation": "Belgium",
+    "cat": "INF",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "luxembourg__rover-101fc",
+    "name": "Rover 101FC",
+    "nation": "Luxembourg",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "belgium__rover-pr-v-t",
+    "name": "Rover Prévôté",
+    "nation": "Belgium",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__saperi",
+    "name": "Saperi",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__saperi-kom",
+    "name": "Saperi KOM.",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__scouts",
+    "name": "Scouts",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 25,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon",
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__sklad-snabzheniya",
+    "name": "Sklad Snabzheniya",
+    "nation": "Soviet Union",
+    "cat": "LOG",
+    "cost": 175,
+    "meta": 9,
+    "fun": 5,
+    "tags": []
+  },
+  {
+    "id": "canada__skyguard-swe-35mm",
+    "name": "Skyguard SWE 35mm",
+    "nation": "Canada",
+    "cat": "AA",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "sam"
+    ]
+  },
+  {
+    "id": "canada__sniper",
+    "name": "Sniper",
+    "nation": "Canada",
+    "cat": "REC",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "usa__sniper",
+    "name": "Sniper",
+    "nation": "USA",
+    "cat": "REC",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "belgium__sniper-esr",
+    "name": "Sniper ESR",
+    "nation": "Belgium",
+    "cat": "REC",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "usa__stinger",
+    "name": "Stinger",
+    "nation": "USA",
+    "cat": "AA",
+    "cost": 50,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "sam"
+    ]
+  },
+  {
+    "id": "soviet-union__t-80b",
+    "name": "T-80B",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 245,
+    "meta": 10,
+    "fun": 4,
+    "tags": [
+      "heavy"
+    ]
+  },
+  {
+    "id": "soviet-union__t-80bk",
+    "name": "T-80BK",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 270,
+    "meta": 10,
+    "fun": 3,
+    "tags": [
+      "heavy"
+    ]
+  },
+  {
+    "id": "soviet-union__t-80bv",
+    "name": "T-80BV",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 260,
+    "meta": 10,
+    "fun": 3,
+    "tags": [
+      "heavy"
+    ]
+  },
+  {
+    "id": "soviet-union__t-80bvk",
+    "name": "T-80BVK",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 285,
+    "meta": 10,
+    "fun": 3,
+    "tags": [
+      "heavy"
+    ]
+  },
+  {
+    "id": "soviet-union__t-80bv-izd-29",
+    "name": "T-80BV izd. 29",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 270,
+    "meta": 10,
+    "fun": 3,
+    "tags": [
+      "heavy"
+    ]
+  },
+  {
+    "id": "soviet-union__to-55",
+    "name": "TO-55",
+    "nation": "Soviet Union",
+    "cat": "TNK",
+    "cost": 95,
+    "meta": 6,
+    "fun": 7,
+    "tags": [
+      "tank"
+    ]
+  },
+  {
+    "id": "usa__tow-2a",
+    "name": "TOW-2A",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 100,
+    "meta": 6,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "canada__tow-2",
+    "name": "TOW-2",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 95,
+    "meta": 6,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "usa__tow-2",
+    "name": "TOW-2",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 95,
+    "meta": 6,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "canada__tank-hunters",
+    "name": "Tank Hunters",
+    "nation": "Canada",
+    "cat": "INF",
+    "cost": 30,
+    "meta": 3,
+    "fun": 8,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__tank-hunters",
+    "name": "Tank Hunters",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 35,
+    "meta": 3,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__uaz-3151",
+    "name": "UAZ-3151",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__uaz-3151-ags-17",
+    "name": "UAZ-3151 AGS-17",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "soviet-union__uaz-469-komendatura",
+    "name": "UAZ-469 Komendatura",
+    "nation": "Soviet Union",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "usa__uh-1h-co",
+    "name": "UH-1H CO",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__uh-1h-huey",
+    "name": "UH-1H Huey",
+    "nation": "USA",
+    "cat": "HEL",
+    "cost": 35,
+    "meta": 3,
+    "fun": 10,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "usa__uh-60a-blackhawk",
+    "name": "UH-60A Blackhawk",
+    "nation": "USA",
+    "cat": "HEL",
+    "cost": 50,
+    "meta": 4,
+    "fun": 10,
+    "tags": [
+      "air"
+    ]
+  },
+  {
+    "id": "usa__uh-60a-co",
+    "name": "UH-60A CO",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 75,
+    "meta": 5,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "usa__uh-60a-supply",
+    "name": "UH-60A Supply",
+    "nation": "USA",
+    "cat": "LOG",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__usaf-security",
+    "name": "USAF Security",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 55,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__usaf-security-patrol",
+    "name": "USAF Security Patrol",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "usa__usmc-security",
+    "name": "USMC Security",
+    "nation": "USA",
+    "cat": "INF",
+    "cost": 45,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "belgium__unimog-s404",
+    "name": "Unimog S404",
+    "nation": "Belgium",
+    "cat": "INF",
+    "cost": 20,
+    "meta": 3,
+    "fun": 9,
+    "tags": [
+      "cheap"
+    ]
+  },
+  {
+    "id": "soviet-union__ural-4320-snab",
+    "name": "Ural-4320 Snab.",
+    "nation": "Soviet Union",
+    "cat": "LOG",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": []
+  },
+  {
+    "id": "belgium__volvo-n10-log",
+    "name": "Volvo N10 Log.",
+    "nation": "Belgium",
+    "cat": "LOG",
+    "cost": 80,
+    "meta": 5,
+    "fun": 7,
+    "tags": []
+  },
+  {
+    "id": "belgium__claireurs",
+    "name": "Éclaireurs",
+    "nation": "Belgium",
+    "cat": "REC",
+    "cost": 55,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "luxembourg__claireurs",
+    "name": "Éclaireurs",
+    "nation": "Luxembourg",
+    "cat": "REC",
+    "cost": 40,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  },
+  {
+    "id": "belgium__pervier",
+    "name": "Épervier",
+    "nation": "Belgium",
+    "cat": "REC",
+    "cost": 60,
+    "meta": 4,
+    "fun": 8,
+    "tags": [
+      "recon"
+    ]
+  }
+]
