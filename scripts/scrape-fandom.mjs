@@ -126,16 +126,27 @@ const stripHtml = (html) =>
 //   "General Data Nation Soviet Union Type Recon Traits AMPHIBIOUS Deploy Cost 35 ..."
 // Read each field only between its own label and the NEXT known label. Anything
 // outside the infobox is ignored — prose is never scanned for nation names.
-const NEXT_LABEL = '(?:Type|Traits?|Deploy Cost|Unit Cost|Divisions?|Characteristics|Armor|Overview|Category|Categories)';
+const NEXT_LABEL = '(?:Type|Traits?|Deploy Cost|Unit Cost|Divisions?|Characteristics|Armor|Overview|Category|Categories|Class|Cost|Specifications)';
 
 function parseUnitText(title, text) {
-  // Nation: strictly the value between "Nation" and the next infobox label.
+  // TEMPLATE A (older pages: US/Canada/Belgium/Soviet etc.):
+  //   "... Nation Soviet Union Type Recon Traits ... Deploy Cost 35 Unit Cost Low Divisions ..."
   const nationM = text.match(new RegExp(`\\bNation\\b\\s*[:\\-]?\\s*(.{2,40}?)\\s+${NEXT_LABEL}\\b`, 'i'));
-  let nation = nationM ? mapNation(nationM[1]) : null;
-
-  // Type: value between "Type" and the next label.
   const typeM = text.match(new RegExp(`\\bType\\b\\s*[:\\-]?\\s*(.{2,40}?)\\s+${NEXT_LABEL}\\b`, 'i'));
-  let cat = typeM ? mapType(typeM[1]) : null;
+  const costM = text.match(/Deploy Cost\D{0,12}(\d{1,4})/i);
+
+  // TEMPLATE B (newer pages: UK/France and probably others):
+  //   "Challenger MK.3 Information Nation United Kingdom Class Main Battle Tank Cost 260 Specifications ..."
+  // Single combined regex (nation, class-as-type, cost together) rather than
+  // independent stop-word scans, since "Class" / "Cost" are common English
+  // words and only safe to trust in this exact sequence.
+  const blockM = text.match(
+    /\bNation\b\s*[:\-]?\s*(.{2,40}?)\s+Class\b\s*[:\-]?\s*(.{2,60}?)\s+Cost\D{0,12}(\d{1,4})/i,
+  );
+
+  let nation = blockM ? mapNation(blockM[1]) : (nationM ? mapNation(nationM[1]) : null);
+  let cat = blockM ? mapType(blockM[2]) : (typeM ? mapType(typeM[1]) : null);
+  let cost = blockM ? Number(blockM[3]) : (costM ? Number(costM[1]) : null);
 
   // Fallback ONLY to the strict lead sentence: "<Name> is a <Nation> <Type> unit."
   if (!nation || !cat) {
@@ -148,9 +159,6 @@ function parseUnitText(title, text) {
     }
   }
 
-  const costM = text.match(/Deploy Cost\D{0,12}(\d{1,4})/i);
-  const cost = costM ? Number(costM[1]) : null;
-
   const name = title.replace(/\s*\([^)]*\)\s*$/, '').trim(); // drop "(Sov)" suffix
 
   // Why was it rejected? (helps distinguish "not a unit page" from "parser gap")
@@ -158,13 +166,20 @@ function parseUnitText(title, text) {
   if (!nation) missing.push('nation');
   if (!cat) missing.push('type');
   if (cost == null) missing.push('cost');
-  const hasInfobox = !!(nationM || typeM || costM);
+  const hasInfobox = !!(blockM || nationM || typeM || costM);
+
+  // Template B always labels its block "<page title> Information" even for
+  // multi-variant "Platform" pages (e.g. AMX-30 Platform bundles 30B/30B2/
+  // Brenus but only ever surfaces one block, tagged with the page title).
+  // Flag these so a human can check whether the resulting name/stats are
+  // actually for the variant they expect, rather than silently mislabeling.
+  const ambiguousName = !!blockM && /platform$/i.test(title);
 
   return {
     name, nation, cat, cost,
-    rawNation: nationM ? nationM[1].trim() : null,
-    rawType: typeM ? typeM[1].trim() : null,
-    missing, hasInfobox,
+    rawNation: blockM ? blockM[1].trim() : (nationM ? nationM[1].trim() : null),
+    rawType: blockM ? blockM[2].trim() : (typeM ? typeM[1].trim() : null),
+    missing, hasInfobox, ambiguousName,
   };
 }
 
@@ -244,6 +259,36 @@ const SAMPLES = [
     expect: { nation: 'USA', cat: 'TNK', cost: 215 },
   },
   {
+    // Real text from `--debug "Challenger MK.3"` — Template B (Class/Cost, not Type/Deploy Cost).
+    title: 'Challenger MK.3',
+    text: `Challenger MK.3 Information Nation United Kingdom Class Main Battle Tank Cost 260
+           Specifications Armor Front 18 / Side 8 / Rear 5 / Top 3 Strength 11 Optics Mediocre
+           Speed 50 km/h Road Speed 75 km/h Stealth Bad Fuel 1950 L Autonomy 25/48 km Weapons
+           Primary L11A5 (120mm x 64) Secondary L8A2 (7.62mm x 840) Challenger MK.3 is a British
+           Tank unit. Overview [ ] Challenger 1 Mk.3 is an upgraded variant of Challenger 1 Mk.2.`,
+    expect: { nation: 'United Kingdom', cat: 'TNK', cost: 260 },
+  },
+  {
+    // Real text from `--debug "AMX-30 Platform"` — Template B, embedded mid-page.
+    // Nation/cat/cost resolve correctly; ambiguousName should flag it since "AMX-30 Platform"
+    // bundles 30B/30B2/Brenus but this block is only ever the one tagged "<title> Information".
+    title: 'AMX-30 Platform',
+    text: `AMX-30B AMX-30B2 AMX-30B2 BRENUS The AMX-30B is a French-designed main battle tank.
+           AMX-30 Platform Information Nation France Class Main Battle Tank Cost 135
+           Specifications Armor Front 11 / Side 4 / Rear 3 / Top 2 Optics Mediocre Speed 72 km/h`,
+    expect: { nation: 'France', cat: 'TNK', cost: 135 },
+    expectAmbiguous: true,
+  },
+  {
+    // Real text from `--debug "Leopard 2A4"` — genuinely no infobox on this stub page.
+    // Must stay null after the fix too; this isn't a regex gap, the data isn't there.
+    title: 'Leopard 2A4',
+    text: `Contents 1 Leopard 2A4 1.1 Armor 1.2 Weapons 1.3 Strategy Leopard 2A4 [ ] The main
+           tank of the 5. Panzer Official Battlegroup, the leopard is the Germans answer to the
+           T-80UD. Front Armor: 20 Side Armor: 10 Back Armor: 4 Top Armor: 3.`,
+    expect: null,
+  },
+  {
     title: 'Some Vehicle Page',
     text: `Some Vehicle A page with no infobox at all. It can be used by troops and
            the crew can fight. Nothing structured here.`,
@@ -258,9 +303,10 @@ function selftest() {
     const got = u.nation && u.cat && u.cost != null
       ? { nation: u.nation, cat: u.cat, cost: u.cost }
       : null;
-    const ok = JSON.stringify(got) === JSON.stringify(s.expect);
+    let ok = JSON.stringify(got) === JSON.stringify(s.expect);
+    if (ok && s.expectAmbiguous) ok = u.ambiguousName === true;
     console.log(`${ok ? 'PASS' : 'FAIL'}  ${s.title.padEnd(22)} -> ${JSON.stringify(got)}`);
-    if (!ok) console.log(`      expected ${JSON.stringify(s.expect)}`);
+    if (!ok) console.log(`      expected ${JSON.stringify(s.expect)}${s.expectAmbiguous ? ' + ambiguousName' : ''}`);
     if (ok) pass++;
   }
   console.log(`\n${pass}/${SAMPLES.length} passed`);
@@ -299,6 +345,7 @@ async function main() {
   const out = [];
   const seen = new Set();
   const nearMisses = [];
+  const ambiguousNames = [];
   let nonUnitPages = 0;
 
   for (let i = 0; i < titles.length; i++) {
@@ -313,6 +360,7 @@ async function main() {
           seen.add(id);
           const { meta, fun } = ratings(u.cat, u.cost);
           out.push({ id, name: u.name, nation: u.nation, cat: u.cat, cost: u.cost, meta, fun, tags: tagsFor(u.cat, u.cost, '') });
+          if (u.ambiguousName) ambiguousNames.push(`${title} -> nation=${u.nation} cost=${u.cost} (name is the page title, not necessarily the variant this block belongs to)`);
         }
       } else if (u && u.hasInfobox) {
         // Had a stats infobox but a field wouldn't parse -> a real parser gap. Report it.
@@ -352,6 +400,13 @@ async function main() {
     for (const t of nearMisses.slice(0, 40)) console.log(`  - ${t}`);
     if (nearMisses.length > 40) console.log(`  … and ${nearMisses.length - 40} more`);
     console.log('Paste these back if any look like real units — the label variant can be added.');
+  }
+
+  if (ambiguousNames.length) {
+    console.log(`\n${ambiguousNames.length} "Platform" page(s) included with a possibly-misleading name (only one variant's stats are on the page, but it's labeled with the page title, not the variant):`);
+    for (const t of ambiguousNames.slice(0, 40)) console.log(`  - ${t}`);
+    if (ambiguousNames.length > 40) console.log(`  … and ${ambiguousNames.length - 40} more`);
+    console.log('Check these manually — the id/name in custom-units.json may need a variant-specific rename.');
   }
 
   console.log('\nData: WARNO wiki (CC-BY-SA); game values © Eugen Systems. Keep attribution if you publish.');

@@ -8,9 +8,9 @@
 A full-stack web app for **WARNO** that rolls a random **battlegroup (division)** and
 fills it with a randomized deck. Pick the vibe:
 
-- **Fun mix** — wide, chaotic spread biased toward napalm, rockets, spam and gimmick
+- **Fun mix** - wide, chaotic spread biased toward napalm, rockets, spam and gimmick
   units. Tank division with zero tanks and a helicopter circus? Absolutely.
-- **Meta mix** — secures recon, tanks and AA first, then stacks the strongest cards
+- **Meta mix** - secures recon, tanks and AA first, then stacks the strongest cards
   within the division's activation-point budget.
 
 Inspired by community deck builders like WaRYes. Every roll has a **seed**, so a deck
@@ -37,7 +37,7 @@ battlegroups come up more often.
   **donor pool** (NATO minors → West German gear, Pact minors → Soviet gear) so their
   decks fill out plausibly. This is configurable in `backend/src/logic/availability.ts`.
 - A couple of entries had blank/TBD stats on the wiki (Tropical Storm's two divisions,
-  and one Nemesis #4 row whose columns were truncated) — those limits are estimated and
+  and one Nemesis #4 row whose columns were truncated) - those limits are estimated and
   flagged in their blurbs. Nemesis #5–#8 are announced but not yet populated on the wiki,
   so they're omitted for now.
 
@@ -99,7 +99,7 @@ warno-deck-randomizer/
 
 ---
 
-## Quick start (production — single command serves everything)
+## Quick start (production - single command serves everything)
 
 From the project root:
 
@@ -110,7 +110,7 @@ npm start         # starts the backend, which also serves the built frontend
 
 Then open **http://localhost:4000**.
 
-The backend runs TypeScript directly with [`tsx`](https://github.com/privatenumber/tsx) —
+The backend runs TypeScript directly with [`tsx`](https://github.com/privatenumber/tsx) -
 no separate compile step is needed to start it. `npm run setup` is just `install:all` +
 `build` (the frontend build). If you prefer to do it by hand:
 
@@ -132,14 +132,14 @@ npm --prefix backend run build    # emit compiled JS to backend/dist (tsc)
 
 ## Dev mode (hot reload, two terminals)
 
-**Terminal 1 — backend (API on :4000):**
+**Terminal 1 - backend (API on :4000):**
 ```bash
 cd backend
 npm install        # first time only
 npm run dev        # tsx watch (hot reload)
 ```
 
-**Terminal 2 — frontend (Vite dev server on :5173):**
+**Terminal 2 - frontend (Vite dev server on :5173):**
 ```bash
 cd frontend
 npm install        # first time only
@@ -179,7 +179,7 @@ Base URL: `http://localhost:4000`
   "coalition": "NATO",    // optional filter when randomizing: "NATO" | "PACT"
   "dlc": "NORTHAG",       // optional filter when randomizing: a DLC/pack name
   "nation": "USA",        // optional filter when randomizing
-  "seed": "abc123"        // optional — same seed + mode => same deck
+  "seed": "abc123"        // optional - same seed + mode => same deck
 }
 ```
 
@@ -217,70 +217,16 @@ curl "http://localhost:4000/api/randomize?mode=meta&divisionId=sov-79gtd&seed=de
   cards you can field.
 - Every unit carries a **`meta`** score and a **`fun`** score (1–10) plus tags.
   - **Meta mix** weights selection by `meta` (sharpened), favours tags like `atgm`,
-    `heavy`, `spaag`, fills recon/tanks/AA toward their limits first, and — when rolling a
-    *random* battlegroup — weights division choice by `power` so stronger divisions appear
+    `heavy`, `spaag`, fills recon/tanks/AA toward their limits first, and - when rolling a
+    *random* battlegroup - weights division choice by `power` so stronger divisions appear
     more often.
   - **Fun mix** weights by `fun`, favours `napalm`/`cluster`/`spam`/`rockets`, spreads
     cards across categories at random counts, and picks divisions uniformly.
 - A **seeded RNG** (mulberry32) makes any roll reproducible. The UI's "Copy share link"
   encodes `seed`, `mode`, `divisionId`, and `coalition` in the URL.
-- A **deck code** (base64url) carries the actual cards, not just a seed — paste it into
+- A **deck code** (base64url) carries the actual cards, not just a seed - paste it into
   the "Import a deck code" box (or share `?code=...`) to re-load the exact same deck even
   if the dataset later changes.
-
----
-
-## Deploy to Vercel
-
-The repo is Vercel-ready: the frontend builds to static files and the Express API runs as
-a single serverless function.
-
-- `vercel.json` — builds `frontend/`, serves `frontend/dist`, and rewrites `/api/*` to the
-  function.
-- `api/index.ts` — the serverless entry; it just re-exports the Express app from
-  `backend/src/app.ts`.
-- The root `package.json` lists `express` + `cors` so Vercel installs them for the function.
-
-**Option A — Git (recommended):** push this folder to a GitHub/GitLab repo, then in the
-Vercel dashboard **Add New → Project → Import** the repo. Leave the build settings as
-detected (they come from `vercel.json`) and deploy.
-
-**Option B — CLI:**
-```bash
-npm i -g vercel
-vercel          # preview deploy (run from the project root)
-vercel --prod   # production deploy
-```
-
-The frontend calls `/api/...` on the same domain, so no environment variables are needed.
-Local dev is unaffected — `npm start` (or the two-terminal dev flow) still works exactly
-as above.
-
----
-
-## SEO
-
-The app ships search-engine-ready so it can surface for queries like "WARNO deck builder"
-and "WARNO deck randomizer":
-
-- Keyword-rich `<title>`, meta description and a crawlable `<h1>`.
-- Open Graph + Twitter Card tags and a generated 1200×630 share image
-  (`frontend/public/og-image.png`) — links unfurl with a branded preview.
-- `WebApplication` JSON-LD structured data.
-- `frontend/public/robots.txt` and `frontend/public/sitemap.xml`.
-- A `<noscript>` description for crawlers that don't run JavaScript.
-
-**Set your domain (one-time):** once you know your deployment URL, replace the placeholder
-`https://warno-deck-randomizer.vercel.app` with your real domain in three files:
-
-1. `frontend/index.html` — `canonical`, `og:url`, `og:image`, `twitter:image`, and the JSON-LD `url`.
-2. `frontend/public/sitemap.xml` — the `<loc>`.
-3. `frontend/public/robots.txt` — the `Sitemap:` line.
-
-Then, to actually get indexed: deploy on a stable URL (ideally a custom domain), submit the
-site in [Google Search Console](https://search.google.com/search-console) and request
-indexing, and earn a few inbound links (Reddit, the WARNO Discord, your GitHub README).
-Rankings build over days-to-weeks, not instantly.
 
 ---
 
@@ -289,10 +235,10 @@ Rankings build over days-to-weeks, not instantly.
 - **HTTP security headers** via [`helmet`](https://helmetjs.github.io/) on the API, plus a
   matching Content-Security-Policy for the static site in `vercel.json` (allows only self +
   Google Fonts).
-- **Rate limiting** — `/api` is capped at 120 requests/minute/IP (`express-rate-limit`),
+- **Rate limiting** - `/api` is capped at 120 requests/minute/IP (`express-rate-limit`),
   with `trust proxy` set so client IPs are correct behind Vercel.
 - **Request body limit** of `64kb` on JSON.
-- **No secrets in the repo** — `.env*` is git-ignored and the app needs no API keys.
+- **No secrets in the repo** - `.env*` is git-ignored and the app needs no API keys.
 - See [`SECURITY.md`](SECURITY.md) for the disclosure policy.
 
 After the first push, turn on the free extras in **repo Settings → Code security**:
@@ -310,9 +256,9 @@ git add .
 git commit -m "Add security headers, rate limiting, CI, license, SEO FAQ"
 git push
 
-# discoverability: description + topics (shows up in GitHub search & topic pages)
+# discoverability: description + topics
 gh repo edit Hung1510/Warno-Deck-Randomizer \
-  --description "Roll a random WARNO battlegroup and build a fun or meta deck — 56 battlegroups, 14 nations." \
+  --description "Roll a random WARNO battlegroup and build a fun or meta deck - 56 battlegroups, 14 nations." \
   --homepage "https://warno-deck-randomizer.vercel.app" \
   --add-topic warno --add-topic deck-builder --add-topic randomizer \
   --add-topic eugen-systems --add-topic wargame --add-topic rts \
@@ -397,10 +343,10 @@ writes `backend/src/data/custom-units.json`. See `scripts/example-waryes-units.j
 the expected input shape, and adjust `FIELDS` / `NATION_MAP` / `CATEGORY_MAP` at the top of
 the script if your export uses different keys.
 
-### Scraping the WARNO Fandom wiki (recommended — licensed & scriptable)
+### Scraping the WARNO Fandom wiki (licensed & scriptable)
 
 The [WARNO Fandom wiki](https://warno.fandom.com/) is server-rendered MediaWiki with a
-public API, and its content is **CC-BY-SA** — so it can be reused *with attribution*. The
+public API, and its content is **CC-BY-SA** - so it can be reused *with attribution*. The
 included scraper pulls every unit page and writes `custom-units.json` directly:
 
 ```bash
@@ -416,15 +362,15 @@ own contact string in the `UA` constant before a big run.
 
 > Two honesty notes: the wiki has on the order of a few hundred unit *pages* (one per unit,
 > not the ~2,849 veterancy/transport variants waryes counts), and the underlying game values
-> originate from Eugen Systems — keep the CC-BY-SA attribution if you publish the result.
+> originate from Eugen Systems - keep the CC-BY-SA attribution if you publish the result.
 
 > Imported units only appear in decks for nations that have divisions in the app, and the
-> derived `meta`/`fun` scores are rough — tune them (or the heuristics in the script) to
+> derived `meta`/`fun` scores are rough - tune them (or the heuristics in the script) to
 > taste.
 
 ---
 
 ## Notes
 
-- No personal data, accounts, or external calls — everything runs locally.
+- No personal data, accounts, or external calls - everything runs locally.
 - Stats and balance here are hand-tuned for the randomizer, not pulled from game files.
