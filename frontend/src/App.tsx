@@ -128,7 +128,7 @@ export default function App() {
   return (
     <div className="app">
       <header className="masthead">
-        <div className="masthead__mark">▲</div>
+        <div className="masthead__mark">W</div>
         <div className="masthead__text">
           <h1>WARNO Deck Builder &amp; Randomizer</h1>
           <p>Roll a random battlegroup and build a deck — fun chaos or meta steel.</p>
