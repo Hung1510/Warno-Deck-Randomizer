@@ -4,6 +4,7 @@ import { getDivision } from '../api';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import DivisionRadar from '../components/DivisionRadar';
 import DivisionTree from '../components/DivisionTree';
+import CategorySynergyGraph from '../components/CategorySynergyGraph';
 import type { CategoryCode, DivisionDetail } from '../types';
 
 const CATEGORY_ORDER: CategoryCode[] = ['LOG', 'REC', 'INF', 'ART', 'TNK', 'AA', 'HEL', 'AIR'];
@@ -120,6 +121,15 @@ export default function DivisionPage() {
             </div>
           </section>
         )}
+
+        <section className="div-page__synergy console">
+          <span className="console__label">Combined-Arms Synergy</span>
+          <p className="div-page__synergy-note">
+            Category-level doctrine, not unit-level — every unit in a category shares its pattern.
+            Dimmed categories aren't fielded by this division.
+          </p>
+          <CategorySynergyGraph categoryLimits={division.categoryLimits} />
+        </section>
 
         {division.units.length > 0 && (
           <section className="div-page__units console">

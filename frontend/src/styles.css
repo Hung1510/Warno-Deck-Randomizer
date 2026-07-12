@@ -444,6 +444,48 @@ body::before {
   font-family: var(--font-mono); font-size: 11px; fill: var(--dim); letter-spacing: 0.06em;
 }
 
+.div-page__synergy-note { margin: 8px 0 4px; color: var(--muted); font-size: 12.5px; line-height: 1.5; }
+
+.synergy { display: flex; gap: 24px; margin-top: 10px; flex-wrap: wrap; align-items: flex-start; }
+.synergy__svg { width: 280px; height: 280px; flex-shrink: 0; }
+.synergy__edge { stroke: var(--amber-soft); transition: opacity 0.15s; }
+.synergy__node circle {
+  fill: var(--panel-2); stroke: var(--amber); stroke-width: 1.5; cursor: pointer;
+  transition: fill 0.15s, stroke 0.15s;
+}
+.synergy__node text {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.03em;
+  fill: var(--bone); pointer-events: none; text-transform: uppercase;
+}
+.synergy__node:hover circle, .synergy__node:focus-visible circle { fill: var(--panel); stroke-width: 2; }
+.synergy__node:focus-visible { outline: none; }
+.synergy__node:focus-visible circle { filter: drop-shadow(0 0 4px var(--amber-glow)); }
+.synergy__node[data-selected] circle {
+  fill: var(--amber); stroke: var(--amber);
+  filter: drop-shadow(0 0 8px var(--amber-glow));
+}
+.synergy__node[data-selected] text { fill: #1a1606; }
+.synergy__node[data-dimmed] circle { stroke: var(--line); opacity: 0.4; }
+.synergy__node[data-dimmed] text { fill: var(--dim); }
+
+.synergy__readout {
+  flex: 1; min-width: 220px; font-family: var(--font-mono); font-size: 13px;
+  background: var(--bg-2); border: 1px solid var(--line-soft); padding: 14px 16px;
+}
+.synergy__readout-hint { color: var(--dim); margin: 0; font-style: italic; }
+.synergy__readout-head { margin: 0 0 10px; color: var(--bone); line-height: 1.5; }
+.synergy__readout-cat {
+  color: var(--amber); font-weight: 700; letter-spacing: 0.06em; text-shadow: 0 0 5px var(--amber-glow);
+}
+.synergy__readout-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.synergy__readout-list li { color: var(--muted); line-height: 1.5; }
+.synergy__readout-list strong { color: var(--bone); }
+
+@media (max-width: 560px) {
+  .synergy { flex-direction: column; align-items: center; }
+  .synergy__readout { width: 100%; }
+}
+
 .div-tree {
   margin-top: 10px; font-family: var(--font-mono); font-size: 13px; line-height: 1.9;
   background: var(--bg-2); border: 1px solid var(--line-soft); padding: 12px 14px;

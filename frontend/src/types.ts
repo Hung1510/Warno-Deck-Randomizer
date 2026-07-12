@@ -17,6 +17,8 @@ export interface DeckUnit extends Unit {
   apCost: number;
 }
 
+export type CategoryLimits = Record<CategoryCode, number>;
+
 export interface Division {
   id: string;
   name: string;
@@ -27,7 +29,7 @@ export interface Division {
   power: number;
   blurb: string;
   activationPoints: number;
-  categoryLimits: Record<CategoryCode, number>;
+  categoryLimits: CategoryLimits;
 }
 
 export interface CategoryStrength {
