@@ -1,0 +1,16 @@
+{
+  "name": "warno-deck-randomizer-discord-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Discord bot for the WARNO Deck Randomizer -- /randomdeck, /daily, /division, /counter",
+  "scripts": {
+    "register": "node src/register-commands.js",
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5"
+  }
+}

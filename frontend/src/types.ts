@@ -72,6 +72,18 @@ export interface DifficultyRating {
   };
 }
 
+export interface SearchMatch {
+  categories: CategoryCode[];
+  tags: string[];
+  freeText: string[];
+}
+
+export interface SearchResult {
+  results: Unit[];
+  matched: SearchMatch;
+  totalMatches: number;
+}
+
 export interface CounterInfo {
   opponentDivision: string;
   opponentCategoryCounts: Record<string, number>;

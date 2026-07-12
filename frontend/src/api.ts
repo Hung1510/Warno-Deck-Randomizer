@@ -1,4 +1,4 @@
-import type { CounterPayload, DeckResponse, Division, DivisionDetail, MetaResponse, RandomizePayload } from './types';
+import type { CounterPayload, DeckResponse, Division, DivisionDetail, MetaResponse, RandomizePayload, SearchResult } from './types';
 
 const BASE: string = import.meta.env.VITE_API_BASE || '';
 
@@ -40,4 +40,8 @@ export function getCounterDeck(payload: CounterPayload): Promise<DeckResponse> {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
   }).then((r) => json<DeckResponse>(r));
+}
+
+export function searchUnits(q: string): Promise<SearchResult> {
+  return fetch(`${BASE}/api/units/search?q=${encodeURIComponent(q)}`).then((r) => json<SearchResult>(r));
 }

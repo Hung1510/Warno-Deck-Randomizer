@@ -51,16 +51,7 @@ export interface CounterAnalysis {
   theme: ThemePreset | null;
 }
 
-/**
- * Analyzes an opponent's deck (its actual rolled/decoded cards) and derives a
- * combined ThemePreset that counters whatever categories it leans on. Merges
- * every triggered doctrine entry rather than picking just the single most
- * common category, since a deck can be threatening in more than one way at once.
- */
-export function computeCounterTheme(opponentCards: DeckUnit[]): CounterAnalysis {
-  const counts: Record<string, number> = {};
-  for (const u of opponentCards) counts[u.cat] = (counts[u.cat] || 0) + 1;
-
+function computeCounterThemeFromCounts(counts: Record<string, number>, subjectLabel: string): CounterAnalysis {
   const triggered: string[] = [];
   const categories = new Set<CategoryCode>();
   const tags = new Set<string>();
@@ -69,14 +60,14 @@ export function computeCounterTheme(opponentCards: DeckUnit[]): CounterAnalysis 
   for (const doctrine of COUNTER_DOCTRINE) {
     const count = counts[doctrine.against] || 0;
     if (count < doctrine.threshold) continue;
-    triggered.push(`${doctrine.note} (opponent fields ${count} ${doctrine.against}).`);
+    triggered.push(`${doctrine.note} (${subjectLabel} fields ${count} ${doctrine.against}).`);
     labels.push(doctrine.counter.label);
     for (const c of doctrine.counter.categories) categories.add(c);
     for (const t of doctrine.counter.tags) tags.add(t);
   }
 
   if (categories.size === 0) {
-    return { opponentCategoryCounts: counts, triggered: ['Opponent deck has no single dominant category -- rolling a balanced response instead.'], theme: null };
+    return { opponentCategoryCounts: counts, triggered: [`${subjectLabel} has no single dominant category -- rolling a balanced response instead.`], theme: null };
   }
 
   return {
@@ -84,4 +75,27 @@ export function computeCounterTheme(opponentCards: DeckUnit[]): CounterAnalysis 
     triggered,
     theme: { label: `Counter: ${[...new Set(labels)].join(' + ')}`, categories: [...categories], tags: [...tags] },
   };
+}
+
+/**
+ * Analyzes an opponent's actual rolled/decoded deck and derives a combined
+ * ThemePreset that counters whatever categories it leans on. Merges every
+ * triggered doctrine entry rather than picking just the single most common
+ * category, since a deck can be threatening in more than one way at once.
+ */
+export function computeCounterTheme(opponentCards: DeckUnit[]): CounterAnalysis {
+  const counts: Record<string, number> = {};
+  for (const u of opponentCards) counts[u.cat] = (counts[u.cat] || 0) + 1;
+  return computeCounterThemeFromCounts(counts, 'opponent');
+}
+
+/**
+ * Same doctrine, but sourced from a division's structural categoryLimits
+ * rather than one specific rolled deck -- "what does this division type
+ * typically field" rather than "what did this one deck happen to roll".
+ * Used by the /counter <division> Discord command, where pasting a full deck
+ * code into a slash-command argument isn't a reasonable UX.
+ */
+export function computeCounterThemeForDivision(categoryLimits: Record<CategoryCode, number>, divisionName: string): CounterAnalysis {
+  return computeCounterThemeFromCounts(categoryLimits, divisionName);
 }

@@ -213,7 +213,10 @@ export default function App() {
           <h1>WARNO Deck Builder &amp; Randomizer</h1>
           <p>Roll a random battlegroup and build a deck — fun chaos or meta steel.</p>
         </div>
-        <Link to="/divisions" className="div-index__back">All divisions →</Link>
+        <nav className="masthead__nav">
+          <Link to="/divisions" className="div-index__back">All divisions →</Link>
+          <Link to="/units" className="div-index__back">Search units →</Link>
+        </nav>
       </header>
 
       <main className="layout">

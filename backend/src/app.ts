@@ -10,7 +10,8 @@ import { DIVISIONS, DIVISIONS_BY_ID, CATEGORIES, CATEGORY_LABELS, DLCS } from '.
 import { availableUnits } from './logic/availability.js';
 import { generateDeck, generateDeckWithThemeOverride } from './logic/randomizer.js';
 import { computeDivisionProfile } from './logic/profile.js';
-import { computeCounterTheme } from './logic/counter.js';
+import { computeCounterTheme, computeCounterThemeForDivision } from './logic/counter.js';
+import { searchUnits } from './logic/search.js';
 import { encodeDeck, decodeDeck } from './logic/deckcode.js';
 import type { DeckResponse, CounterDeckResponse } from './types.js';
 
@@ -71,6 +72,13 @@ app.get('/api/divisions', (_req: Request, res: Response) => {
   res.json(DIVISIONS);
 });
 
+app.get('/api/divisions/lookup', (req: Request, res: Response) => {
+  const q = typeof req.query.q === 'string' ? req.query.q : '';
+  const division = findDivision(q);
+  if (!division) return res.status(404).json({ error: `No division matches "${q}"` });
+  res.json(division);
+});
+
 app.get('/api/divisions/:id', (req: Request, res: Response) => {
   const division = DIVISIONS_BY_ID[req.params.id];
   if (!division) return res.status(404).json({ error: 'Division not found' });
@@ -108,6 +116,60 @@ function handleDecode(code: unknown, res: Response) {
 }
 app.get('/api/decode', (req: Request, res: Response) => handleDecode(req.query.code, res));
 app.post('/api/decode', (req: Request, res: Response) => handleDecode((req.body || {}).code, res));
+
+// Substring match against id or name, case-insensitive -- "79gtd" -> sov-79gtd,
+// "11e" -> "11e Division Parachutiste". Exact id match wins if there is one.
+function findDivision(query: string) {
+  const q = query.trim().toLowerCase();
+  if (!q) return null;
+  const exact = DIVISIONS.find((d) => d.id.toLowerCase() === q);
+  if (exact) return exact;
+  return DIVISIONS.find((d) => d.id.toLowerCase().includes(q) || d.name.toLowerCase().includes(q)) || null;
+}
+
+// Deterministic "deck of the day" -- same division and cards for everyone on
+// the same UTC calendar day, since the seeded RNG makes seed=date fully
+// reproducible. Fixed chaos=50/no theme so it's one canonical roll, not a
+// per-user choice.
+app.get('/api/daily', (_req: Request, res: Response) => {
+  const date = new Date().toISOString().slice(0, 10);
+  const deck = generateDeck({ seed: `daily-${date}`, chaos: 50 });
+  res.json({ ...deck, code: encodeDeck(deck), date });
+});
+
+// Counter a division's structural profile (categoryLimits) rather than one
+// specific rolled deck -- built for /counter <division> in Discord, where
+// pasting a full deck code as a slash-command argument isn't reasonable UX.
+app.get('/api/counter/division/:query', (req: Request, res: Response) => {
+  try {
+    const target = findDivision(req.params.query);
+    if (!target) return res.status(404).json({ error: `No division matches "${req.params.query}"` });
+
+    const analysis = computeCounterThemeForDivision(target.categoryLimits, target.name);
+    const params = {
+      divisionId: req.query.divisionId as string | undefined,
+      coalition: req.query.coalition as string | undefined,
+      chaos: req.query.chaos as string | undefined,
+    };
+    const deck: DeckResponse = analysis.theme
+      ? generateDeckWithThemeOverride(params, analysis.theme)
+      : generateDeck(params);
+
+    const response: CounterDeckResponse = {
+      ...deck,
+      counterOf: { opponentDivision: target.name, opponentCategoryCounts: analysis.opponentCategoryCounts, notes: analysis.triggered },
+    };
+    res.json({ ...response, code: encodeDeck(response) });
+  } catch (err) {
+    res.status(400).json({ error: (err as Error).message });
+  }
+});
+
+app.get('/api/units/search', (req: Request, res: Response) => {
+  const q = typeof req.query.q === 'string' ? req.query.q : '';
+  if (!q.trim()) return res.json({ results: [], matched: { categories: [], tags: [], freeText: [] }, totalMatches: 0 });
+  res.json(searchUnits(q));
+});
 
 // Generate a deck that counters an opponent's deck code.
 //   body: { opponentCode: string, divisionId?, coalition?, nation?, dlc?, chaos?, seed? }
