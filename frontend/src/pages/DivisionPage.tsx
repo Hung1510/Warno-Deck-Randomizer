@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { getDivision } from '../api';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import DivisionRadar from '../components/DivisionRadar';
+import DivisionTree from '../components/DivisionTree';
 import type { CategoryCode, DivisionDetail } from '../types';
 
 const CATEGORY_ORDER: CategoryCode[] = ['LOG', 'REC', 'INF', 'ART', 'TNK', 'AA', 'HEL', 'AIR'];
@@ -123,15 +124,7 @@ export default function DivisionPage() {
         {division.units.length > 0 && (
           <section className="div-page__units console">
             <span className="console__label">Available Units ({division.units.length})</span>
-            <div className="div-page__units-grid">
-              {division.units.map((u) => (
-                <div key={u.id} className="div-page__unit">
-                  <span className="div-page__unit-cat">{u.cat}</span>
-                  <span className="div-page__unit-name">{u.name}</span>
-                  <span className="div-page__unit-cost">{u.cost} pts</span>
-                </div>
-              ))}
-            </div>
+            <DivisionTree divisionName={division.name} units={division.units} />
           </section>
         )}
       </div>

@@ -444,18 +444,34 @@ body::before {
   font-family: var(--font-mono); font-size: 11px; fill: var(--dim); letter-spacing: 0.06em;
 }
 
-.div-page__units-grid { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
-.div-page__unit {
-  display: grid; grid-template-columns: 44px 1fr auto; gap: 10px; align-items: center;
-  padding: 8px 10px; background: var(--bg-2); border: 1px solid var(--line-soft); font-size: 13px;
+.div-tree {
+  margin-top: 10px; font-family: var(--font-mono); font-size: 13px; line-height: 1.9;
+  background: var(--bg-2); border: 1px solid var(--line-soft); padding: 12px 14px;
 }
-.div-page__unit-cat { font-family: var(--font-mono); font-size: 10px; color: var(--amber-soft); letter-spacing: 0.08em; }
-.div-page__unit-name { color: var(--bone); }
-.div-page__unit-cost { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.div-tree__row { display: flex; align-items: baseline; gap: 6px; white-space: pre; }
+.div-tree__row--root { color: var(--bone); font-weight: 700; letter-spacing: 0.02em; }
+.div-tree__branch {
+  width: 100%; background: none; border: none; cursor: pointer; padding: 0;
+  font: inherit; color: inherit; text-align: left;
+}
+.div-tree__branch:hover .div-tree__cat { color: var(--amber); }
+.div-tree__branch:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+.div-tree__connector { color: var(--dim); }
+.div-tree__toggle { color: var(--amber-soft); width: 1ch; display: inline-block; }
+.div-tree__cat {
+  color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;
+}
+.div-tree__count { color: var(--dim); }
+.div-tree__leaf { color: var(--bone); }
+.div-tree__unit-name { flex: 1; white-space: normal; }
+.div-tree__unit-cost { color: var(--dim); flex-shrink: 0; }
+
+@media (max-width: 560px) {
+  .div-tree { font-size: 12px; }
+}
 
 @media (max-width: 560px) {
   .div-page__limits-grid { grid-template-columns: repeat(2, 1fr); }
-  .div-page__unit { grid-template-columns: 36px 1fr auto; }
 }
 
 /* ---------- responsive ---------- */
