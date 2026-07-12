@@ -169,6 +169,19 @@ body {
 .pill--coalition.is-pact { color: #f3d3d1; border-color: var(--pact-deep); background: rgba(192,71,63,0.12); }
 .pill--rating { color: var(--amber); border-color: var(--amber-soft); background: rgba(224,176,74,0.1); }
 .pill--dlc { color: var(--bone); border-color: var(--line); background: var(--panel-2); letter-spacing: 0.1em; }
+.pill--difficulty { display: inline-flex; align-items: center; gap: 5px; cursor: help; }
+.pill--difficulty__empty { opacity: 0.35; }
+.pill--difficulty__label { text-transform: none; letter-spacing: 0.04em; color: inherit; }
+/* Color scale by star count: 1-2 easy (green), 3 moderate (amber), 4-5 hard (red) */
+.pill--difficulty[data-stars="1"], .pill--difficulty[data-stars="2"] {
+  color: #8fce8f; border-color: rgba(143,206,143,0.4); background: rgba(143,206,143,0.08);
+}
+.pill--difficulty[data-stars="3"] {
+  color: var(--amber); border-color: var(--amber-soft); background: rgba(224,176,74,0.1);
+}
+.pill--difficulty[data-stars="4"], .pill--difficulty[data-stars="5"] {
+  color: #e0968f; border-color: rgba(224,150,143,0.4); background: rgba(224,150,143,0.08);
+}
 .dossier__theme { font-family: var(--font-display); font-size: 18px; color: var(--amber); letter-spacing: 0.02em; }
 .dossier__blurb { margin: 10px 0 0; color: var(--muted); font-size: 13.5px; max-width: 70ch; }
 
@@ -363,6 +376,20 @@ body {
 }
 .div-page__limit-cat { font-family: var(--font-mono); font-size: 10px; color: var(--dim); letter-spacing: 0.1em; }
 .div-page__limit-val { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--bone); }
+
+.div-page__profile-body {
+  display: flex; align-items: center; gap: 32px; margin-top: 10px; flex-wrap: wrap;
+}
+.div-page__profile-tiles { display: flex; flex-direction: column; gap: 18px; }
+
+.div-radar { width: 260px; height: 260px; flex-shrink: 0; }
+.div-radar__ring { fill: none; stroke: var(--line-soft); stroke-width: 1; }
+.div-radar__axis { stroke: var(--line-soft); stroke-width: 1; }
+.div-radar__shape { fill: rgba(224,176,74,0.16); stroke: var(--amber); stroke-width: 1.5; }
+.div-radar__dot { fill: var(--amber); }
+.div-radar__label {
+  font-family: var(--font-mono); font-size: 11px; fill: var(--dim); letter-spacing: 0.06em;
+}
 
 .div-page__units-grid { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
 .div-page__unit {

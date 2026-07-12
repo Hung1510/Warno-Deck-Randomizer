@@ -1,4 +1,5 @@
 import CategoryColumn from './CategoryColumn';
+import DifficultyStars from './DifficultyStars';
 import type { CategoryCode, DeckResponse } from '../types';
 
 const ORDER: CategoryCode[] = ['LOG', 'REC', 'INF', 'ART', 'TNK', 'AA', 'HEL', 'AIR'];
@@ -50,6 +51,7 @@ export default function Dossier({
                 ★ {division.power}/10
               </span>
             )}
+            {deck.difficulty && <DifficultyStars difficulty={deck.difficulty} />}
             <span className="dossier__theme">“{theme}”</span>
           </p>
           <p className="dossier__blurb">{division.blurb}</p>

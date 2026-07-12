@@ -1,5 +1,6 @@
 import { DIVISIONS, DIVISIONS_BY_ID, CATEGORIES } from '../data/divisions.js';
 import { availableUnits, groupByCategory, slotCost } from './availability.js';
+import { rateDifficulty } from './difficulty.js';
 import type {
   CategoryCode, Deck, DeckResponse, DeckUnit, Division, Mode, RandomizeParams, Unit,
 } from '../types.js';
@@ -196,5 +197,6 @@ export function generateDeck(params: RandomizeParams = {}): DeckResponse {
       totalPoints,
       categories: counts,
     },
+    difficulty: rateDifficulty(cards),
   };
 }

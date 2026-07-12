@@ -14,9 +14,11 @@ export const CATEGORY_LABELS: Record<CategoryCode, string> = {
 };
 
 // Activation-point budget per division type (the lever that gates deck size).
+// In-game max is 50 AP -- previous values here topped out at 65, which was wrong.
+// Rescaled proportionally (old max 65 -> 50) to preserve relative ordering.
 const AP_BY_TYPE: Record<DivisionType, number> = {
-  Armored: 65, Cavalry: 65, Mechanized: 60, Motorized: 62,
-  Airborne: 55, Airmobile: 55, Naval: 60, Territorial: 58,
+  Armored: 50, Cavalry: 50, Mechanized: 46, Motorized: 48,
+  Airborne: 42, Airmobile: 42, Naval: 46, Territorial: 45,
 };
 
 // Build category limits from the wiki's column order: LOG INF ART TNK REC AA HEL AIR.

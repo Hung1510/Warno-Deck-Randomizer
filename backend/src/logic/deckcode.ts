@@ -1,5 +1,6 @@
 import { UNITS_BY_ID } from '../data/units.js';
 import { DIVISIONS_BY_ID, CATEGORIES } from '../data/divisions.js';
+import { rateDifficulty } from './difficulty.js';
 import type { CategoryCode, Deck, DeckResponse, DeckUnit, Mode } from '../types.js';
 
 interface DeckCodePayload {
@@ -60,6 +61,8 @@ export function decodeDeck(code: string): DeckResponse {
     totalPoints += unit.cost || 0;
   }
 
+  const cards = CATEGORIES.flatMap((c) => deck[c]);
+
   return {
     seed: payload.s || null,
     mode: payload.m === 'meta' ? 'meta' : 'fun',
@@ -74,5 +77,6 @@ export function decodeDeck(code: string): DeckResponse {
       totalPoints,
       categories: counts,
     },
+    difficulty: rateDifficulty(cards),
   };
 }

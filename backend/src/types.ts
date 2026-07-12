@@ -38,6 +38,19 @@ export interface Division {
 // Division as returned in a deck payload (same shape, kept explicit for the API).
 export type PublicDivision = Division;
 
+export interface CategoryStrength {
+  limit: number;
+  avgMeta: number;
+  avgFun: number;
+  strength: number;
+}
+
+export interface DivisionProfile {
+  metaScore: number;
+  memeScore: number;
+  categories: Record<CategoryCode, CategoryStrength>;
+}
+
 export type Deck = Record<CategoryCode, DeckUnit[]>;
 
 export interface DeckSummary {
@@ -48,6 +61,18 @@ export interface DeckSummary {
   categories: Record<CategoryCode, number>;
 }
 
+export interface DifficultyRating {
+  stars: number;
+  score: number;
+  label: 'Trivial' | 'Easy' | 'Moderate' | 'Demanding' | 'Hard';
+  breakdown: {
+    avgCost: number;
+    avgMeta: number;
+    categorySpread: number;
+    precisionTagShare: number;
+  };
+}
+
 export interface DeckResponse {
   seed: string | null;
   mode: Mode;
@@ -56,6 +81,7 @@ export interface DeckResponse {
   division: PublicDivision;
   deck: Deck;
   summary: DeckSummary;
+  difficulty: DifficultyRating;
 }
 
 export interface RandomizeParams {

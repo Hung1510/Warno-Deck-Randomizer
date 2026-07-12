@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getDivision } from '../api';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
+import DivisionRadar from '../components/DivisionRadar';
 import type { CategoryCode, DivisionDetail } from '../types';
 
 const CATEGORY_ORDER: CategoryCode[] = ['LOG', 'REC', 'INF', 'ART', 'TNK', 'AA', 'HEL', 'AIR'];
@@ -99,6 +100,25 @@ export default function DivisionPage() {
             ))}
           </div>
         </section>
+
+        {division.profile && (
+          <section className="div-page__profile console">
+            <span className="console__label">Division Profile</span>
+            <div className="div-page__profile-body">
+              <DivisionRadar profile={division.profile} />
+              <div className="div-page__profile-tiles">
+                <div className="div-page__stat">
+                  <span className="console__label">Meta score</span>
+                  <span className="div-page__stat-value">{division.profile.metaScore}/10</span>
+                </div>
+                <div className="div-page__stat">
+                  <span className="console__label">Meme score</span>
+                  <span className="div-page__stat-value">{division.profile.memeScore}/10</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {division.units.length > 0 && (
           <section className="div-page__units console">

@@ -9,6 +9,7 @@ import fs from 'node:fs';
 import { DIVISIONS, DIVISIONS_BY_ID, CATEGORIES, CATEGORY_LABELS, DLCS } from './data/divisions.js';
 import { availableUnits } from './logic/availability.js';
 import { generateDeck } from './logic/randomizer.js';
+import { computeDivisionProfile } from './logic/profile.js';
 import { encodeDeck, decodeDeck } from './logic/deckcode.js';
 import type { DeckResponse } from './types.js';
 
@@ -72,7 +73,8 @@ app.get('/api/divisions', (_req: Request, res: Response) => {
 app.get('/api/divisions/:id', (req: Request, res: Response) => {
   const division = DIVISIONS_BY_ID[req.params.id];
   if (!division) return res.status(404).json({ error: 'Division not found' });
-  res.json({ ...division, units: availableUnits(division) });
+  const units = availableUnits(division);
+  res.json({ ...division, units, profile: computeDivisionProfile(division, units) });
 });
 
 // Generate a randomized deck.
