@@ -6,7 +6,8 @@
   "description": "Full-stack TypeScript WARNO battlegroup deck randomizer (Fun mix vs Meta mix)",
   "scripts": {
     "install:all": "npm --prefix backend install && npm --prefix frontend install",
-    "build": "npm --prefix frontend run build",
+    "build": "npm run sitemap && npm --prefix frontend run build",
+    "sitemap": "npm --prefix backend run sitemap",
     "start": "npm --prefix backend start",
     "setup": "npm run install:all && npm run build",
     "typecheck": "npm --prefix backend run typecheck && npm --prefix frontend run typecheck",

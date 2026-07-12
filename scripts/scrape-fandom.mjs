@@ -42,6 +42,7 @@ const DELAY_MS = Number(getFlag('--delay', 200)) || 200;
 const OUT = getFlag('--out', path.join(root, 'backend/src/data/custom-units.json'));
 const SELFTEST = args.includes('--selftest');
 const DEBUG_TITLE = getFlag('--debug', null);
+const LIST_TITLES = args.includes('--list-titles');
 
 // ---- mapping tables ---------------------------------------------------------
 // Canonical nation names EXACTLY as they appear in the wiki infobox "Nation" field,
@@ -315,6 +316,21 @@ function selftest() {
 
 async function main() {
   if (SELFTEST) return selftest();
+
+  if (LIST_TITLES) {
+    // Fast: just the paginated allpages listing, no per-page fetch. Use this to
+    // find REAL titles for --debug instead of guessing (e.g. Marder/Leopard/T-72
+    // spelled how the wiki actually spells them, with dots/dashes/case as-is).
+    console.log('Listing ALL wiki page titles (no fetching, just the list) …');
+    const titles = await listAllTitles();
+    const out = getFlag('--out', null) && String(getFlag('--out')).endsWith('.txt')
+      ? getFlag('--out')
+      : path.join(root, 'all-page-titles.txt');
+    fs.writeFileSync(out, titles.join('\n'));
+    console.log(`Wrote ${titles.length} titles -> ${path.relative(root, out)}`);
+    console.log('Grep it for what you need, e.g.:  findstr /i "marder" ' + path.relative(root, out));
+    return;
+  }
 
   if (DEBUG_TITLE) {
     // Dump one page's full stripped text + what the parser extracted from it.

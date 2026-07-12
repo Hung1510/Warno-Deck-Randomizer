@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { getMeta, getDivisions, randomize, decode } from './api';
 import Controls from './components/Controls';
 import Dossier from './components/Dossier';
@@ -58,6 +59,14 @@ export default function App() {
             coalition: sharedCo === 'ALL' ? undefined : sharedCo,
             seed: p.get('seed') as string,
           });
+        } else if (p.get('divisionId')) {
+          // Arrived from a /division/:id page's "Roll a deck" CTA — no seed,
+          // just preselect the division. Autoroll if asked to.
+          const preselected = p.get('divisionId') as string;
+          setDivisionId(preselected);
+          if (p.get('autoroll')) {
+            run({ mode, divisionId: preselected });
+          }
         }
       })
       .catch((e: Error) => setError(e.message));
@@ -124,6 +133,7 @@ export default function App() {
           <h1>WARNO Deck Builder &amp; Randomizer</h1>
           <p>Roll a random battlegroup and build a deck — fun chaos or meta steel.</p>
         </div>
+        <Link to="/divisions" className="div-index__back">All divisions →</Link>
       </header>
 
       <main className="layout">

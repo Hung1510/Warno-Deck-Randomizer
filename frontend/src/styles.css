@@ -287,6 +287,97 @@ body {
 }
 .codebar__btn { white-space: nowrap; }
 
+/* ---------- masthead nav link (division pages) ---------- */
+.div-index__back {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--amber); text-decoration: none;
+  white-space: nowrap; border: 1px solid var(--line); padding: 8px 12px;
+  transition: border-color 0.15s, color 0.15s;
+}
+.div-index__back:hover { border-color: var(--amber); }
+.masthead { position: relative; }
+.masthead .div-index__back { margin-left: auto; }
+
+.div-index__error { color: var(--pact); }
+.div-index__loading { color: var(--muted); font-family: var(--font-mono); font-size: 13px; }
+
+/* ---------- divisions index ---------- */
+.div-index__group { margin-bottom: 30px; }
+.div-index__group-title {
+  font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.08em;
+  font-size: 20px; margin: 0 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--line);
+}
+.div-index__group-title--nato { color: var(--nato); }
+.div-index__group-title--pact { color: var(--pact); }
+
+.div-index__grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px;
+}
+.div-card {
+  display: flex; flex-direction: column; gap: 4px; padding: 14px;
+  background: var(--panel); border: 1px solid var(--line); text-decoration: none;
+  color: var(--bone); transition: border-color 0.15s, transform 0.15s;
+}
+.div-card:hover { transform: translateY(-2px); }
+.div-card__flag {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--dim);
+}
+.div-card__flag--nato { color: var(--nato); }
+.div-card__flag--pact { color: var(--pact); }
+.div-card:hover.div-card__flag--nato, .div-card:hover { border-color: var(--line); }
+.div-index__grid .div-card:hover { border-color: var(--amber); }
+.div-card__name { font-family: var(--font-display); font-weight: 700; font-size: 17px; }
+.div-card__type { font-size: 12px; color: var(--muted); }
+
+/* ---------- division detail page ---------- */
+.div-page { display: flex; flex-direction: column; gap: 18px; max-width: 760px; }
+.div-page__hero { display: flex; flex-direction: column; gap: 14px; }
+.div-page__badge {
+  align-self: flex-start; font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px;
+  border: 1px solid currentColor;
+}
+.div-page__badge--nato { color: var(--nato); }
+.div-page__badge--pact { color: var(--pact); }
+.div-page__blurb { margin: 0; color: var(--bone); font-size: 15px; line-height: 1.5; }
+.div-page__stats { display: flex; gap: 28px; }
+.div-page__stat { display: flex; flex-direction: column; gap: 4px; }
+.div-page__stat-value {
+  font-family: var(--font-display); font-size: 28px; font-weight: 800; color: var(--amber);
+}
+.div-page__cta {
+  align-self: flex-start; font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--bg);
+  background: var(--amber); padding: 10px 16px; text-decoration: none;
+  transition: background 0.15s;
+}
+.div-page__cta:hover { background: var(--amber-soft); }
+
+.div-page__limits-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 10px;
+}
+.div-page__limit {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 10px 6px; background: var(--bg-2); border: 1px solid var(--line-soft);
+}
+.div-page__limit-cat { font-family: var(--font-mono); font-size: 10px; color: var(--dim); letter-spacing: 0.1em; }
+.div-page__limit-val { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--bone); }
+
+.div-page__units-grid { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.div-page__unit {
+  display: grid; grid-template-columns: 44px 1fr auto; gap: 10px; align-items: center;
+  padding: 8px 10px; background: var(--bg-2); border: 1px solid var(--line-soft); font-size: 13px;
+}
+.div-page__unit-cat { font-family: var(--font-mono); font-size: 10px; color: var(--amber-soft); letter-spacing: 0.08em; }
+.div-page__unit-name { color: var(--bone); }
+.div-page__unit-cost { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+@media (max-width: 560px) {
+  .div-page__limits-grid { grid-template-columns: repeat(2, 1fr); }
+  .div-page__unit { grid-template-columns: 36px 1fr auto; }
+}
+
 /* ---------- responsive ---------- */
 @media (max-width: 960px) {
   .layout { grid-template-columns: 1fr; }

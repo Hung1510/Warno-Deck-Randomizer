@@ -1,4 +1,4 @@
-import type { DeckResponse, Division, MetaResponse, RandomizePayload } from './types';
+import type { DeckResponse, Division, DivisionDetail, MetaResponse, RandomizePayload } from './types';
 
 const BASE: string = import.meta.env.VITE_API_BASE || '';
 
@@ -16,6 +16,10 @@ export function getMeta(): Promise<MetaResponse> {
 
 export function getDivisions(): Promise<Division[]> {
   return fetch(`${BASE}/api/divisions`).then((r) => json<Division[]>(r));
+}
+
+export function getDivision(id: string): Promise<DivisionDetail> {
+  return fetch(`${BASE}/api/divisions/${encodeURIComponent(id)}`).then((r) => json<DivisionDetail>(r));
 }
 
 export function randomize(payload: RandomizePayload): Promise<DeckResponse> {

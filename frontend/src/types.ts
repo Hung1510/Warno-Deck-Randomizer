@@ -30,6 +30,10 @@ export interface Division {
   categoryLimits: Record<CategoryCode, number>;
 }
 
+export interface DivisionDetail extends Division {
+  units: Unit[];
+}
+
 export type Deck = Record<CategoryCode, DeckUnit[]>;
 
 export interface DeckSummary {
