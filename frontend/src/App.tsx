@@ -21,6 +21,7 @@ export default function App() {
   const [copiedCode, setCopiedCode] = useState<boolean>(false);
   const [importCode, setImportCode] = useState<string>('');
   const [opponentCode, setOpponentCode] = useState<string>('');
+  const [showStats, setShowStats] = useState<boolean>(false);
 
   const run = useCallback((payload: RandomizePayload): Promise<void> => {
     setLoading(true);
@@ -152,6 +153,58 @@ export default function App() {
       .finally(() => setLoading(false));
   };
 
+  const onExport = useCallback(() => {
+    if (!deck) return;
+    const lines: string[] = [];
+    lines.push(`${deck.division.name} (${deck.division.nation}) -- WARNO build list`);
+    lines.push('NOT a native WARNO import file -- Eugen\'s in-game deck code format needs current');
+    lines.push('numeric unit/division IDs this tool doesn\'t have access to (see project notes).');
+    lines.push('Rebuild this by hand in the Armory using the list below.');
+    lines.push('');
+    lines.push(`Mode: ${deck.chaos}% fun / ${100 - deck.chaos}% meta -- theme: ${deck.theme}`);
+    lines.push(`Activation points: ${deck.summary.apSpent}/${deck.summary.apTotal} -- seed: ${deck.seed || 'n/a'}`);
+    lines.push('');
+    for (const cat of ['LOG', 'REC', 'INF', 'ART', 'TNK', 'AA', 'HEL', 'AIR'] as const) {
+      const units = deck.deck[cat] || [];
+      if (units.length === 0) continue;
+      lines.push(`${cat} (${units.length})`);
+      for (const u of units) lines.push(`  - ${u.name} (${u.cost} pts)`);
+    }
+    const blob = new Blob([lines.join('\n')], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    const slug = deck.division.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    a.href = url;
+    a.download = `warno-buildlist-${slug}-${deck.seed || 'roll'}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }, [deck]);
+
+  // Keyboard shortcuts: R reroll, C copy share link, E export build list, D
+  // toggle stats dashboard. Ignored while typing in an input/textarea/select,
+  // and while any modifier key is held (so Cmd/Ctrl+C etc. still work normally).
+  useEffect(() => {
+    function isTypingTarget(target: EventTarget | null): boolean {
+      if (!(target instanceof HTMLElement)) return false;
+      const tag = target.tagName;
+      return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || target.isContentEditable;
+    }
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.ctrlKey || e.metaKey || e.altKey || isTypingTarget(e.target)) return;
+      switch (e.key.toLowerCase()) {
+        case 'r': e.preventDefault(); onReroll(); break;
+        case 'c': e.preventDefault(); onCopy(); break;
+        case 'e': e.preventDefault(); onExport(); break;
+        case 'd': e.preventDefault(); setShowStats((s) => !s); break;
+        default: break;
+      }
+    }
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [onReroll, onCopy, onExport]);
+
   return (
     <div className="app">
       <header className="masthead">
@@ -174,6 +227,12 @@ export default function App() {
             divisionId={divisionId} setDivisionId={setDivisionId}
             onGenerate={onGenerate} loading={loading}
           />
+          <div className="shortcuts-hint">
+            <span><kbd>R</kbd> reroll</span>
+            <span><kbd>C</kbd> copy link</span>
+            <span><kbd>E</kbd> export</span>
+            <span><kbd>D</kbd> stats</span>
+          </div>
           <div className="legend">
             <p className="legend__title">How it works</p>
             <p>Slide the <strong className="legend__fun">chaos factor</strong> toward <strong className="legend__fun">Fun</strong> for a wide, chaotic spread biased toward napalm, rockets, spam and gimmick units — or toward <strong className="legend__meta">Meta</strong> to fill recon, tanks and AA first, stacking the strongest cards within budget.</p>
@@ -222,6 +281,9 @@ export default function App() {
             copied={copied}
             onCopyCode={onCopyCode}
             copiedCode={copiedCode}
+            onExport={onExport}
+            showStats={showStats}
+            onToggleStats={() => setShowStats((s) => !s)}
           />
         </div>
       </main>

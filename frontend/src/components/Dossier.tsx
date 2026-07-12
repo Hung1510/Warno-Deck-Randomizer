@@ -1,5 +1,6 @@
 import CategoryColumn from './CategoryColumn';
 import DifficultyStars from './DifficultyStars';
+import DeckStatsDashboard from './DeckStatsDashboard';
 import type { CategoryCode, DeckResponse } from '../types';
 
 const ORDER: CategoryCode[] = ['LOG', 'REC', 'INF', 'ART', 'TNK', 'AA', 'HEL', 'AIR'];
@@ -12,10 +13,14 @@ interface DossierProps {
   copied: boolean;
   onCopyCode: () => void;
   copiedCode: boolean;
+  onExport: () => void;
+  showStats: boolean;
+  onToggleStats: () => void;
 }
 
 export default function Dossier({
   deck, categoryLabels, onReroll, onCopy, copied, onCopyCode, copiedCode,
+  onExport, showStats, onToggleStats,
 }: DossierProps) {
   if (!deck) {
     return (
@@ -102,11 +107,23 @@ export default function Dossier({
         ))}
       </div>
 
+      {showStats && <DeckStatsDashboard deck={deck} categoryLabels={categoryLabels} />}
+
       <footer className="dossier__foot">
         <span className="seedline">SEED: <code>{seed || '—'}</code></span>
         <div className="dossier__actions">
-          <button className="ghost" onClick={onCopy}>{copied ? 'Copied ✓' : 'Copy share link'}</button>
-          <button className="ghost ghost--accent" onClick={onReroll}>↻ Reroll same mix</button>
+          <button className="ghost" onClick={onToggleStats}>
+            {showStats ? 'Hide stats' : 'Show stats'} <kbd>D</kbd>
+          </button>
+          <button className="ghost" onClick={onExport}>
+            Export build list <kbd>E</kbd>
+          </button>
+          <button className="ghost" onClick={onCopy}>
+            {copied ? 'Copied ✓' : 'Copy share link'} <kbd>C</kbd>
+          </button>
+          <button className="ghost ghost--accent" onClick={onReroll}>
+            ↻ Reroll same mix <kbd>R</kbd>
+          </button>
         </div>
       </footer>
 
