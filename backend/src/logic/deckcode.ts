@@ -4,9 +4,10 @@ import { rateDifficulty } from './difficulty.js';
 import type { CategoryCode, Deck, DeckResponse, DeckUnit, Mode } from '../types.js';
 
 interface DeckCodePayload {
-  v: 1;
+  v: 1 | 2;
   d: string;                              // division id
   m: Mode;
+  ch?: number;                            // chaos slider 0-100 (v2+; absent on old v1 codes)
   th: string;                             // theme
   s: string | null;                       // seed
   c: Array<[CategoryCode, string, number]>; // [category, unitId, apCost]
@@ -28,7 +29,7 @@ export function encodeDeck(deck: DeckResponse): string {
     for (const u of deck.deck[cat] || []) cards.push([cat, u.id, u.apCost]);
   }
   const payload: DeckCodePayload = {
-    v: 1, d: deck.division.id, m: deck.mode, th: deck.theme, s: deck.seed, c: cards,
+    v: 2, d: deck.division.id, m: deck.mode, ch: deck.chaos, th: deck.theme, s: deck.seed, c: cards,
   };
   return b64urlEncode(JSON.stringify(payload));
 }
@@ -40,7 +41,7 @@ export function decodeDeck(code: string): DeckResponse {
   } catch {
     throw new Error('Invalid deck code');
   }
-  if (!payload || payload.v !== 1) throw new Error('Unsupported deck code version');
+  if (!payload || (payload.v !== 1 && payload.v !== 2)) throw new Error('Unsupported deck code version');
 
   const division = DIVISIONS_BY_ID[payload.d];
   if (!division) throw new Error(`Unknown division in deck code: ${payload.d}`);
@@ -62,10 +63,15 @@ export function decodeDeck(code: string): DeckResponse {
   }
 
   const cards = CATEGORIES.flatMap((c) => deck[c]);
+  const mode: Mode = payload.m === 'meta' ? 'meta' : 'fun';
+  // v1 codes predate the chaos slider -- derive an equivalent value from the
+  // binary mode they were saved with, so old shared links still open sensibly.
+  const chaos = typeof payload.ch === 'number' ? payload.ch : (mode === 'meta' ? 0 : 100);
 
   return {
     seed: payload.s || null,
-    mode: payload.m === 'meta' ? 'meta' : 'fun',
+    mode,
+    chaos,
     theme: payload.th || '',
     code,
     division,

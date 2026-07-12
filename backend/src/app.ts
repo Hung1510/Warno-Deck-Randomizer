@@ -8,10 +8,11 @@ import fs from 'node:fs';
 
 import { DIVISIONS, DIVISIONS_BY_ID, CATEGORIES, CATEGORY_LABELS, DLCS } from './data/divisions.js';
 import { availableUnits } from './logic/availability.js';
-import { generateDeck } from './logic/randomizer.js';
+import { generateDeck, generateDeckWithThemeOverride } from './logic/randomizer.js';
 import { computeDivisionProfile } from './logic/profile.js';
+import { computeCounterTheme } from './logic/counter.js';
 import { encodeDeck, decodeDeck } from './logic/deckcode.js';
-import type { DeckResponse } from './types.js';
+import type { DeckResponse, CounterDeckResponse } from './types.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -107,6 +108,40 @@ function handleDecode(code: unknown, res: Response) {
 }
 app.get('/api/decode', (req: Request, res: Response) => handleDecode(req.query.code, res));
 app.post('/api/decode', (req: Request, res: Response) => handleDecode((req.body || {}).code, res));
+
+// Generate a deck that counters an opponent's deck code.
+//   body: { opponentCode: string, divisionId?, coalition?, nation?, dlc?, chaos?, seed? }
+app.post('/api/counter', (req: Request, res: Response) => {
+  try {
+    const body = req.body || {};
+    const opponentCode = body.opponentCode;
+    if (!opponentCode || typeof opponentCode !== 'string') {
+      return res.status(400).json({ error: 'Missing opponentCode' });
+    }
+    const opponent = decodeDeck(opponentCode);
+    const opponentCards = Object.values(opponent.deck).flat();
+    const analysis = computeCounterTheme(opponentCards);
+
+    const params = { ...body };
+    delete params.opponentCode;
+
+    const deck: DeckResponse = analysis.theme
+      ? generateDeckWithThemeOverride(params, analysis.theme)
+      : generateDeck(params);
+
+    const response: CounterDeckResponse = {
+      ...deck,
+      counterOf: {
+        opponentDivision: opponent.division.name,
+        opponentCategoryCounts: analysis.opponentCategoryCounts,
+        notes: analysis.triggered,
+      },
+    };
+    res.json({ ...response, code: encodeDeck(response) });
+  } catch (err) {
+    res.status(400).json({ error: (err as Error).message });
+  }
+});
 
 // ---- Serve the built frontend when running as a normal server (local) ----
 // On Vercel the static files are served by the platform, so this guard is a no-op

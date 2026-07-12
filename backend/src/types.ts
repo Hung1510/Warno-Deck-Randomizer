@@ -73,9 +73,16 @@ export interface DifficultyRating {
   };
 }
 
+export interface ThemePreset {
+  label: string;
+  categories: CategoryCode[];
+  tags: string[];
+}
+
 export interface DeckResponse {
   seed: string | null;
   mode: Mode;
+  chaos: number;
   theme: string;
   code?: string;
   division: PublicDivision;
@@ -84,9 +91,19 @@ export interface DeckResponse {
   difficulty: DifficultyRating;
 }
 
+export interface CounterDeckResponse extends DeckResponse {
+  counterOf: {
+    opponentDivision: string;
+    opponentCategoryCounts: Record<string, number>;
+    notes: string[];
+  };
+}
+
 export interface RandomizeParams {
   divisionId?: string;
   mode?: Mode | string;
+  chaos?: number | string;
+  theme?: string;
   coalition?: Coalition | string;
   nation?: string;
   dlc?: string;

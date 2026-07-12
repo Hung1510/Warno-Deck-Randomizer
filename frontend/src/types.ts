@@ -72,15 +72,23 @@ export interface DifficultyRating {
   };
 }
 
+export interface CounterInfo {
+  opponentDivision: string;
+  opponentCategoryCounts: Record<string, number>;
+  notes: string[];
+}
+
 export interface DeckResponse {
   seed: string | null;
   mode: Mode;
+  chaos: number;
   theme: string;
   code?: string;
   division: Division;
   deck: Deck;
   summary: DeckSummary;
   difficulty: DifficultyRating;
+  counterOf?: CounterInfo;
 }
 
 export interface MetaResponse {
@@ -94,8 +102,14 @@ export interface MetaResponse {
 export interface RandomizePayload {
   divisionId?: string;
   mode?: Mode;
+  chaos?: number;
+  theme?: string;
   coalition?: string;
   nation?: string;
   dlc?: string;
   seed?: string;
+}
+
+export interface CounterPayload extends RandomizePayload {
+  opponentCode: string;
 }

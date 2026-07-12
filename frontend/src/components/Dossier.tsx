@@ -27,15 +27,16 @@ export default function Dossier({
     );
   }
 
-  const { division, summary, mode, theme, seed } = deck;
+  const { division, summary, mode, chaos, theme, seed } = deck;
   const apPct = Math.min(100, Math.round((summary.apSpent / summary.apTotal) * 100));
   const coalitionClass = division.coalition === 'NATO' ? 'is-nato' : 'is-pact';
+  const chaosLabel = chaos === 50 ? 'BALANCED' : chaos > 50 ? `${chaos}% FUN MIX` : `${100 - chaos}% META MIX`;
 
   return (
     <div className={`dossier ${coalitionClass}`}>
       <div className="dossier__banner">
         <span>FIELD ORBAT // RANDOMIZED</span>
-        <span className={`tag-mode tag-mode--${mode}`}>{mode === 'meta' ? 'META MIX' : 'FUN MIX'}</span>
+        <span className={`tag-mode tag-mode--${mode}`}>{chaosLabel}</span>
       </div>
 
       <header className="dossier__head">
@@ -75,6 +76,18 @@ export default function Dossier({
           <div className="apbar"><div className="apbar__fill" style={{ width: `${apPct}%` }} /></div>
         </div>
       </div>
+
+      {deck.counterOf && (
+        <div className="counter-intel">
+          <span className="counter-intel__label">Counter Intel</span>
+          <p className="counter-intel__against">
+            Built to counter <strong>{deck.counterOf.opponentDivision}</strong>
+          </p>
+          <ul className="counter-intel__notes">
+            {deck.counterOf.notes.map((note, i) => <li key={i}>{note}</li>)}
+          </ul>
+        </div>
+      )}
 
       <div className="grid">
         {ORDER.map((code) => (

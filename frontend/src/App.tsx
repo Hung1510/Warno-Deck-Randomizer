@@ -1,14 +1,15 @@
 import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { getMeta, getDivisions, randomize, decode } from './api';
+import { getMeta, getDivisions, randomize, decode, getCounterDeck } from './api';
 import Controls from './components/Controls';
 import Dossier from './components/Dossier';
-import type { CategoryCode, DeckResponse, Division, Mode, RandomizePayload } from './types';
+import type { CategoryCode, DeckResponse, Division, RandomizePayload } from './types';
 
 export default function App() {
   const [divisions, setDivisions] = useState<Division[]>([]);
   const [categoryLabels, setCategoryLabels] = useState<Partial<Record<CategoryCode, string>>>({});
-  const [mode, setMode] = useState<Mode>('fun');
+  const [chaos, setChaos] = useState<number>(100); // 0 = pure meta, 100 = pure fun -- matches the old default (fun)
+  const [theme, setTheme] = useState<string>('');
   const [coalition, setCoalition] = useState<string>('ALL');
   const [dlc, setDlc] = useState<string>('ALL');
   const [dlcs, setDlcs] = useState<string[]>([]);
@@ -19,6 +20,7 @@ export default function App() {
   const [copied, setCopied] = useState<boolean>(false);
   const [copiedCode, setCopiedCode] = useState<boolean>(false);
   const [importCode, setImportCode] = useState<string>('');
+  const [opponentCode, setOpponentCode] = useState<string>('');
 
   const run = useCallback((payload: RandomizePayload): Promise<void> => {
     setLoading(true);
@@ -43,18 +45,23 @@ export default function App() {
         if (p.get('code')) {
           setLoading(true);
           decode(p.get('code') as string)
-            .then((d) => setDeck(d))
+            .then((d) => { setDeck(d); setChaos(d.chaos); })
             .catch((e: Error) => setError(e.message))
             .finally(() => setLoading(false));
         } else if (p.get('seed')) {
-          const sharedMode: Mode = p.get('mode') === 'meta' ? 'meta' : 'fun';
+          // chaos takes priority; fall back to the old binary mode param for
+          // links shared before the slider existed.
+          const sharedChaos = p.get('chaos') ? Number(p.get('chaos')) : (p.get('mode') === 'meta' ? 0 : 100);
           const sharedDiv = p.get('divisionId') || 'random';
           const sharedCo = p.get('coalition') || 'ALL';
-          setMode(sharedMode);
+          const sharedTheme = p.get('theme') || '';
+          setChaos(sharedChaos);
+          setTheme(sharedTheme);
           setDivisionId(sharedDiv);
           setCoalition(sharedCo);
           run({
-            mode: sharedMode,
+            chaos: sharedChaos,
+            theme: sharedTheme || undefined,
             divisionId: sharedDiv,
             coalition: sharedCo === 'ALL' ? undefined : sharedCo,
             seed: p.get('seed') as string,
@@ -65,7 +72,7 @@ export default function App() {
           const preselected = p.get('divisionId') as string;
           setDivisionId(preselected);
           if (p.get('autoroll')) {
-            run({ mode, divisionId: preselected });
+            run({ chaos, divisionId: preselected });
           }
         }
       })
@@ -75,7 +82,8 @@ export default function App() {
 
   const onGenerate = () => {
     run({
-      mode,
+      chaos,
+      theme: theme || undefined,
       divisionId,
       coalition: coalition === 'ALL' ? undefined : coalition,
       dlc: dlc === 'ALL' ? undefined : dlc,
@@ -85,7 +93,7 @@ export default function App() {
   const onReroll = () => {
     if (!deck) return onGenerate();
     run({
-      mode: deck.mode,
+      chaos: deck.chaos,
       divisionId: deck.division.id,
       coalition: coalition === 'ALL' ? undefined : coalition,
     });
@@ -95,7 +103,8 @@ export default function App() {
     if (!deck) return;
     const p = new URLSearchParams({
       seed: deck.seed || '',
-      mode: deck.mode,
+      chaos: String(deck.chaos),
+      mode: deck.mode, // kept for older links / third-party bookmarklets
       divisionId: deck.division.id,
       coalition,
     });
@@ -120,7 +129,25 @@ export default function App() {
     setLoading(true);
     setError(null);
     decode(code)
-      .then((d) => { setDeck(d); setImportCode(''); })
+      .then((d) => { setDeck(d); setChaos(d.chaos); setImportCode(''); })
+      .catch((e: Error) => setError(e.message))
+      .finally(() => setLoading(false));
+  };
+
+  const onGenerateCounter = () => {
+    const code = opponentCode.trim();
+    if (!code) return;
+    setLoading(true);
+    setError(null);
+    setCopied(false);
+    setCopiedCode(false);
+    getCounterDeck({
+      opponentCode: code,
+      divisionId: divisionId === 'random' ? undefined : divisionId,
+      coalition: coalition === 'ALL' ? undefined : coalition,
+      chaos,
+    })
+      .then((d) => setDeck(d))
       .catch((e: Error) => setError(e.message))
       .finally(() => setLoading(false));
   };
@@ -139,7 +166,8 @@ export default function App() {
       <main className="layout">
         <aside className="layout__side">
           <Controls
-            mode={mode} setMode={setMode}
+            chaos={chaos} setChaos={setChaos}
+            theme={theme} setTheme={setTheme}
             coalition={coalition} setCoalition={setCoalition}
             dlc={dlc} setDlc={setDlc} dlcs={dlcs}
             divisions={divisions}
@@ -148,8 +176,8 @@ export default function App() {
           />
           <div className="legend">
             <p className="legend__title">How it works</p>
-            <p><strong className="legend__fun">Fun mix</strong> — wide, chaotic spread biased toward napalm, rockets, spam and gimmick units.</p>
-            <p><strong className="legend__meta">Meta mix</strong> — fills recon, tanks and AA first, stacking the strongest cards within the activation budget.</p>
+            <p>Slide the <strong className="legend__fun">chaos factor</strong> toward <strong className="legend__fun">Fun</strong> for a wide, chaotic spread biased toward napalm, rockets, spam and gimmick units — or toward <strong className="legend__meta">Meta</strong> to fill recon, tanks and AA first, stacking the strongest cards within budget.</p>
+            <p>A <strong>theme</strong> guarantees a category dominates the roll (eg Helicopter Rush maxes out HEL) on top of whatever the slider is doing.</p>
             <p className="legend__note">56 battlegroups across 14 nations &amp; 9 packs (NORTHAG, SOUTHAG, LANDJUT, Tropical Storm, Nemesis). Stats are estimated, not from game files.</p>
           </div>
 
@@ -167,10 +195,25 @@ export default function App() {
               Load deck
             </button>
           </div>
+
+          <div className="importer">
+            <label className="importer__label" htmlFor="oppcode">Counter deck generator</label>
+            <textarea
+              id="oppcode"
+              className="importer__input"
+              placeholder="Paste an opponent's deck code…"
+              value={opponentCode}
+              onChange={(e) => setOpponentCode(e.target.value)}
+              rows={2}
+            />
+            <button className="ghost ghost--accent importer__btn" onClick={onGenerateCounter} disabled={!opponentCode.trim() || loading}>
+              Generate counter
+            </button>
+          </div>
         </aside>
 
         <div className="layout__main">
-          {error && <div className="alert">⚠ {error}</div>}
+          {error && <div className="alert">{error}</div>}
           <Dossier
             deck={deck}
             categoryLabels={categoryLabels}

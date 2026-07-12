@@ -1,8 +1,18 @@
-import type { Division, Mode } from '../types';
+import type { Division } from '../types';
+
+const THEME_OPTIONS: Array<{ value: string; label: string }> = [
+  { value: '', label: 'No theme' },
+  { value: 'helicopter_rush', label: 'Helicopter Rush' },
+  { value: 'napalm_spam', label: 'Napalm Spam' },
+  { value: 'heavy_armor', label: 'Heavy Armor' },
+  { value: 'recon_sniper', label: 'Recon Sniper' },
+];
 
 interface ControlsProps {
-  mode: Mode;
-  setMode: (m: Mode) => void;
+  chaos: number;
+  setChaos: (n: number) => void;
+  theme: string;
+  setTheme: (t: string) => void;
   coalition: string;
   setCoalition: (c: string) => void;
   dlc: string;
@@ -16,7 +26,8 @@ interface ControlsProps {
 }
 
 export default function Controls({
-  mode, setMode,
+  chaos, setChaos,
+  theme, setTheme,
   coalition, setCoalition,
   dlc, setDlc, dlcs,
   divisions, divisionId, setDivisionId,
@@ -26,27 +37,44 @@ export default function Controls({
     (coalition === 'ALL' || d.coalition === coalition) &&
     (dlc === 'ALL' || d.dlc === dlc)
   );
+  const leaning = chaos === 50 ? 'balanced' : chaos > 50 ? 'fun' : 'meta';
 
   return (
     <div className="console">
       <div className="console__row">
-        <span className="console__label">Mix</span>
-        <div className="toggle" role="group" aria-label="Mix mode">
-          <button
-            className={`toggle__opt ${mode === 'fun' ? 'is-on toggle__opt--fun' : ''}`}
-            onClick={() => setMode('fun')}
-            aria-pressed={mode === 'fun'}
-          >
-            Fun
-          </button>
-          <button
-            className={`toggle__opt ${mode === 'meta' ? 'is-on toggle__opt--meta' : ''}`}
-            onClick={() => setMode('meta')}
-            aria-pressed={mode === 'meta'}
-          >
-            Meta
-          </button>
+        <span className="console__label">Chaos factor</span>
+        <div className="chaos-slider">
+          <div className="chaos-slider__ends">
+            <span className="chaos-slider__end chaos-slider__end--meta">Meta</span>
+            <span className={`chaos-slider__readout chaos-slider__readout--${leaning}`}>
+              {chaos === 50 ? 'BALANCED' : chaos > 50 ? `${chaos}% FUN` : `${100 - chaos}% META`}
+            </span>
+            <span className="chaos-slider__end chaos-slider__end--fun">Fun</span>
+          </div>
+          <input
+            type="range"
+            min={0}
+            max={100}
+            step={1}
+            value={chaos}
+            onChange={(e) => setChaos(Number(e.target.value))}
+            aria-label="Chaos factor: 0 is pure meta, 100 is pure fun"
+            className="chaos-slider__input"
+          />
         </div>
+      </div>
+
+      <div className="console__row">
+        <span className="console__label">Theme</span>
+        <select
+          className="select"
+          value={theme}
+          onChange={(e) => setTheme(e.target.value)}
+        >
+          {THEME_OPTIONS.map((t) => (
+            <option key={t.value} value={t.value}>{t.label}</option>
+          ))}
+        </select>
       </div>
 
       <div className="console__row">

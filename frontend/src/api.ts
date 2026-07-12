@@ -1,4 +1,4 @@
-import type { DeckResponse, Division, DivisionDetail, MetaResponse, RandomizePayload } from './types';
+import type { CounterPayload, DeckResponse, Division, DivisionDetail, MetaResponse, RandomizePayload } from './types';
 
 const BASE: string = import.meta.env.VITE_API_BASE || '';
 
@@ -32,4 +32,12 @@ export function randomize(payload: RandomizePayload): Promise<DeckResponse> {
 
 export function decode(code: string): Promise<DeckResponse> {
   return fetch(`${BASE}/api/decode?code=${encodeURIComponent(code)}`).then((r) => json<DeckResponse>(r));
+}
+
+export function getCounterDeck(payload: CounterPayload): Promise<DeckResponse> {
+  return fetch(`${BASE}/api/counter`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  }).then((r) => json<DeckResponse>(r));
 }
