@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#080905"/>
+  <!-- Solid filled W. Thin strokes don't survive rasterization at 16px, a filled
+       shape does. Corner bracket detail lives on the in-app masthead mark only;
+       at favicon scale it's just noise. -->
+  <path fill="#ffb627" d="
+    M6 12
+    L17 12
+    L24 40
+    L32 18
+    L40 40
+    L47 12
+    L58 12
+    L45 52
+    L36 52
+    L32 38
+    L28 52
+    L19 52
+    Z"/>
+</svg>
